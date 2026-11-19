@@ -1,0 +1,2161 @@
+{
+  "schema": "key-rotation-result/v1",
+  "input": "D:\\my-workspace\\ai-workspace\\zhongqiang\\CC_Codex 用户反馈标注(领域专项)项目\\准备配置\\并行作答_20261117\\批次\\20261120\\12744\\本题\\作答工作区\\cases.json",
+  "workdir": "D:\\my-workspace\\ai-workspace\\zhongqiang\\CC_Codex 用户反馈标注(领域专项)项目\\准备配置\\并行作答_20261117\\批次\\20261120\\12744\\本题\\作答工作区\\runs\\cases",
+  "all_passed": true,
+  "case_count": 12,
+  "results": [
+    {
+      "case_id": "01_happy_rotation",
+      "group_id": "grp_happy",
+      "steps": [
+        {
+          "step": "g",
+          "ok": true,
+          "result": {
+            "group_id": "grp_happy",
+            "created_ms": 1700000000000
+          }
+        },
+        {
+          "step": "p1",
+          "ok": true,
+          "result": {
+            "token": "bbb82b02b47467ba12f64a0cc5dca67ad771267887845d4bbe69e86ac69804f0",
+            "gen": 1,
+            "digest": "24bb2ad747d0094688fbce37606949dacc97a79ab0e6df2a03ee3417ab88a647",
+            "paths": {
+              "a": "D:\\my-workspace\\ai-workspace\\zhongqiang\\CC_Codex 用户反馈标注(领域专项)项目\\准备配置\\并行作答_20261117\\批次\\20261120\\12744\\本题\\作答工作区\\runs\\cases\\01_happy_rotation\\data\\keystore\\groups\\grp_happy\\gen1.a.bin",
+              "b": "D:\\my-workspace\\ai-workspace\\zhongqiang\\CC_Codex 用户反馈标注(领域专项)项目\\准备配置\\并行作答_20261117\\批次\\20261120\\12744\\本题\\作答工作区\\runs\\cases\\01_happy_rotation\\data\\keystore\\groups\\grp_happy\\gen1.b.bin"
+            },
+            "committed": true
+          }
+        },
+        {
+          "step": "pub1",
+          "ok": true,
+          "result": {
+            "gen": 1,
+            "active_gen": 1,
+            "old_gen": null,
+            "old_deadline_ms": null,
+            "replayed": false
+          }
+        },
+        {
+          "step": "s1",
+          "ok": true,
+          "result": {
+            "request_id": "req-1",
+            "gen": 1,
+            "event_digest": "9e7fb51377ee194ac4118bcef561a6f6b413ac07c26026c837a9f7c807a39657",
+            "mac": "b58520ba1c7ff2083abf8ccfaff5d00a6a1532eb01cffd87766627704babb771",
+            "replayed": false
+          }
+        },
+        {
+          "step": "v1",
+          "ok": true,
+          "result": {
+            "gen": 1,
+            "status": "active",
+            "valid": true
+          }
+        },
+        {
+          "step": "p2",
+          "ok": true,
+          "result": {
+            "token": "1cf8b7a67b06c3a9b76f7b9f05ae2c06cc3bd2714648ab6af21ce43dc1b378f4",
+            "gen": 2,
+            "digest": "4024da2c753f443d4ca6fb93dd9f1a854168e3bd9420676807f1ad021fac86a5",
+            "paths": {
+              "a": "D:\\my-workspace\\ai-workspace\\zhongqiang\\CC_Codex 用户反馈标注(领域专项)项目\\准备配置\\并行作答_20261117\\批次\\20261120\\12744\\本题\\作答工作区\\runs\\cases\\01_happy_rotation\\data\\keystore\\groups\\grp_happy\\gen2.a.bin",
+              "b": "D:\\my-workspace\\ai-workspace\\zhongqiang\\CC_Codex 用户反馈标注(领域专项)项目\\准备配置\\并行作答_20261117\\批次\\20261120\\12744\\本题\\作答工作区\\runs\\cases\\01_happy_rotation\\data\\keystore\\groups\\grp_happy\\gen2.b.bin"
+            },
+            "committed": true
+          }
+        },
+        {
+          "step": "pub2",
+          "ok": true,
+          "result": {
+            "gen": 2,
+            "active_gen": 2,
+            "old_gen": 1,
+            "old_deadline_ms": 1700000010000,
+            "replayed": false
+          }
+        },
+        {
+          "step": "s2",
+          "ok": true,
+          "result": {
+            "request_id": "req-2",
+            "gen": 2,
+            "event_digest": "6332200db90abf8a5070bbbe65058aebeb9fc5112b2bf4f80b79e916bd713b68",
+            "mac": "e547c5b1ab85bcf47c14bc8840452c47ac22cbc495ff9cc8cdbe1b09d24e8a22",
+            "replayed": false
+          }
+        },
+        {
+          "step": "v_old_ok",
+          "ok": true,
+          "result": {
+            "gen": 1,
+            "status": "retired",
+            "valid": true
+          }
+        },
+        {
+          "step": "v_other_ev",
+          "ok": true,
+          "result": {
+            "gen": 1,
+            "status": "retired",
+            "valid": false
+          }
+        },
+        {
+          "step": "snap",
+          "ok": true,
+          "result": {
+            "group_id": "grp_happy",
+            "next_gen": 3,
+            "active_gen": 2,
+            "old_gen": 1,
+            "old_deadline_ms": 1700000010000,
+            "generations": [
+              {
+                "gen": 1,
+                "group_id": "grp_happy",
+                "status": "retired",
+                "digest_a": "24bb2ad747d0094688fbce37606949dacc97a79ab0e6df2a03ee3417ab88a647",
+                "digest_b": "24bb2ad747d0094688fbce37606949dacc97a79ab0e6df2a03ee3417ab88a647",
+                "created_ms": 1700000000000,
+                "published_ms": 1700000000000,
+                "revoked_ms": null,
+                "deadline_ms": 1700000010000,
+                "superseded_ms": null,
+                "seed_tag": "seed-happy"
+              },
+              {
+                "gen": 2,
+                "group_id": "grp_happy",
+                "status": "active",
+                "digest_a": "4024da2c753f443d4ca6fb93dd9f1a854168e3bd9420676807f1ad021fac86a5",
+                "digest_b": "4024da2c753f443d4ca6fb93dd9f1a854168e3bd9420676807f1ad021fac86a5",
+                "created_ms": 1700000000000,
+                "published_ms": 1700000000000,
+                "revoked_ms": null,
+                "deadline_ms": null,
+                "superseded_ms": null,
+                "seed_tag": "seed-happy-2"
+              }
+            ],
+            "prep_ledger": [],
+            "receipts": [
+              {
+                "request_id": "req-1",
+                "kind": "sign",
+                "gen": 1,
+                "event_digest": "9e7fb51377ee194ac4118bcef561a6f6b413ac07c26026c837a9f7c807a39657",
+                "mac": "b58520ba1c7ff2083abf8ccfaff5d00a6a1532eb01cffd87766627704babb771",
+                "created_ms": 1700000000000
+              },
+              {
+                "request_id": "req-2",
+                "kind": "sign",
+                "gen": 2,
+                "event_digest": "6332200db90abf8a5070bbbe65058aebeb9fc5112b2bf4f80b79e916bd713b68",
+                "mac": "e547c5b1ab85bcf47c14bc8840452c47ac22cbc495ff9cc8cdbe1b09d24e8a22",
+                "created_ms": 1700000000000
+              }
+            ],
+            "audit_log": [
+              {
+                "id": 1,
+                "event_ms": 1700000000000,
+                "gen": null,
+                "action": "group_created",
+                "detail": "{}"
+              },
+              {
+                "id": 2,
+                "event_ms": 1700000000000,
+                "gen": 1,
+                "action": "prepare_allocated",
+                "detail": "{\"digest\":\"24bb2ad747d0094688fbce37606949dacc97a79ab0e6df2a03ee3417ab88a647\"}"
+              },
+              {
+                "id": 3,
+                "event_ms": 1700000000000,
+                "gen": 1,
+                "action": "prepare_committed",
+                "detail": "{\"copies\":[\"a\",\"b\"],\"digest\":\"24bb2ad747d0094688fbce37606949dacc97a79ab0e6df2a03ee3417ab88a647\"}"
+              },
+              {
+                "id": 4,
+                "event_ms": 1700000000000,
+                "gen": 1,
+                "action": "gen_published",
+                "detail": "{\"old_deadline_ms\":null,\"old_gen\":null}"
+              },
+              {
+                "id": 5,
+                "event_ms": 1700000000000,
+                "gen": 1,
+                "action": "signed",
+                "detail": "{\"copy_slot\":\"a\",\"event_digest\":\"9e7fb51377ee194ac4118bcef561a6f6b413ac07c26026c837a9f7c807a39657\",\"request_id\":\"req-1\"}"
+              },
+              {
+                "id": 6,
+                "event_ms": 1700000000000,
+                "gen": 1,
+                "action": "verified",
+                "detail": "{\"status\":\"active\",\"valid\":true}"
+              },
+              {
+                "id": 7,
+                "event_ms": 1700000000000,
+                "gen": 2,
+                "action": "prepare_allocated",
+                "detail": "{\"digest\":\"4024da2c753f443d4ca6fb93dd9f1a854168e3bd9420676807f1ad021fac86a5\"}"
+              },
+              {
+                "id": 8,
+                "event_ms": 1700000000000,
+                "gen": 2,
+                "action": "prepare_committed",
+                "detail": "{\"copies\":[\"a\",\"b\"],\"digest\":\"4024da2c753f443d4ca6fb93dd9f1a854168e3bd9420676807f1ad021fac86a5\"}"
+              },
+              {
+                "id": 9,
+                "event_ms": 1700000000000,
+                "gen": 1,
+                "action": "gen_retired",
+                "detail": "{\"deadline_ms\":1700000010000}"
+              },
+              {
+                "id": 10,
+                "event_ms": 1700000000000,
+                "gen": 2,
+                "action": "gen_published",
+                "detail": "{\"old_deadline_ms\":1700000010000,\"old_gen\":1}"
+              },
+              {
+                "id": 11,
+                "event_ms": 1700000000000,
+                "gen": 2,
+                "action": "signed",
+                "detail": "{\"copy_slot\":\"a\",\"event_digest\":\"6332200db90abf8a5070bbbe65058aebeb9fc5112b2bf4f80b79e916bd713b68\",\"request_id\":\"req-2\"}"
+              },
+              {
+                "id": 12,
+                "event_ms": 1700000000000,
+                "gen": 1,
+                "action": "verified",
+                "detail": "{\"status\":\"retired\",\"valid\":true}"
+              },
+              {
+                "id": 13,
+                "event_ms": 1700000000000,
+                "gen": 1,
+                "action": "verified",
+                "detail": "{\"status\":\"retired\",\"valid\":false}"
+              }
+            ]
+          }
+        },
+        {
+          "step": "files",
+          "ok": true,
+          "result": {
+            "files": [
+              "gen1.a.bin",
+              "gen1.b.bin",
+              "gen2.a.bin",
+              "gen2.b.bin"
+            ]
+          }
+        }
+      ],
+      "leak_scan": {
+        "leaks": [],
+        "passed": true
+      }
+    },
+    {
+      "case_id": "02_kill_half_written_file",
+      "group_id": "grp_half",
+      "steps": [
+        {
+          "step": "g",
+          "ok": true,
+          "result": {
+            "group_id": "grp_half",
+            "created_ms": 1700000000000
+          }
+        },
+        {
+          "step": "w",
+          "ok": true,
+          "result": {
+            "proc": "worker1",
+            "pid": 46140
+          }
+        },
+        {
+          "step": "kill",
+          "ok": true,
+          "result": {
+            "action": "kill",
+            "hook": "prepare.mid_first_write"
+          }
+        },
+        {
+          "step": "wr",
+          "ok": false,
+          "code": "E_WORKER_KILLED",
+          "message": "no output (terminated)",
+          "returncode": 1
+        },
+        {
+          "step": "files1",
+          "ok": true,
+          "result": {
+            "files": [
+              "gen1.a.bin.46140.1.tmp"
+            ]
+          }
+        },
+        {
+          "step": "rec",
+          "ok": true,
+          "result": {
+            "group_id": "grp_half",
+            "kept": [],
+            "orphan_files_removed": [],
+            "tmp_files_removed": [
+              "D:\\my-workspace\\ai-workspace\\zhongqiang\\CC_Codex 用户反馈标注(领域专项)项目\\准备配置\\并行作答_20261117\\批次\\20261120\\12744\\本题\\作答工作区\\runs\\cases\\02_kill_half_written_file\\data\\keystore\\groups\\grp_half\\gen1.a.bin.46140.1.tmp"
+            ],
+            "abandoned_prepares": [
+              {
+                "gen": 1,
+                "copies": {
+                  "a": false,
+                  "b": false
+                }
+              }
+            ],
+            "staging_pending": []
+          }
+        },
+        {
+          "step": "snap",
+          "ok": true,
+          "result": {
+            "group_id": "grp_half",
+            "next_gen": 2,
+            "active_gen": null,
+            "old_gen": null,
+            "old_deadline_ms": null,
+            "generations": [
+              {
+                "gen": 1,
+                "group_id": "grp_half",
+                "status": "orphan",
+                "digest_a": "d4d287c947957261c22b9a7c60ead44e31f054806f96de6a2f0dada29e268eb8",
+                "digest_b": "d4d287c947957261c22b9a7c60ead44e31f054806f96de6a2f0dada29e268eb8",
+                "created_ms": 1700000000000,
+                "published_ms": null,
+                "revoked_ms": null,
+                "deadline_ms": null,
+                "superseded_ms": null,
+                "seed_tag": "seed-half"
+              }
+            ],
+            "prep_ledger": [],
+            "receipts": [],
+            "audit_log": [
+              {
+                "id": 1,
+                "event_ms": 1700000000000,
+                "gen": null,
+                "action": "group_created",
+                "detail": "{}"
+              },
+              {
+                "id": 2,
+                "event_ms": 1700000000000,
+                "gen": 1,
+                "action": "prepare_allocated",
+                "detail": "{\"digest\":\"d4d287c947957261c22b9a7c60ead44e31f054806f96de6a2f0dada29e268eb8\"}"
+              },
+              {
+                "id": 3,
+                "event_ms": 1700000000000,
+                "gen": 1,
+                "action": "prepare_recovered_orphan",
+                "detail": "{\"copies\":{\"a\":false,\"b\":false}}"
+              }
+            ]
+          }
+        },
+        {
+          "step": "p2",
+          "ok": true,
+          "result": {
+            "token": "15e3ee9a3530bce0a2e7fce355ad801909afc9e9b48a35f8ee6f0d7a9a724a81",
+            "gen": 2,
+            "digest": "5b039716c64ed98a4c3c5186f69cebfc41acba877fd077ee6f04145247a601cd",
+            "paths": {
+              "a": "D:\\my-workspace\\ai-workspace\\zhongqiang\\CC_Codex 用户反馈标注(领域专项)项目\\准备配置\\并行作答_20261117\\批次\\20261120\\12744\\本题\\作答工作区\\runs\\cases\\02_kill_half_written_file\\data\\keystore\\groups\\grp_half\\gen2.a.bin",
+              "b": "D:\\my-workspace\\ai-workspace\\zhongqiang\\CC_Codex 用户反馈标注(领域专项)项目\\准备配置\\并行作答_20261117\\批次\\20261120\\12744\\本题\\作答工作区\\runs\\cases\\02_kill_half_written_file\\data\\keystore\\groups\\grp_half\\gen2.b.bin"
+            },
+            "committed": true
+          }
+        },
+        {
+          "step": "files2",
+          "ok": true,
+          "result": {
+            "files": [
+              "gen2.a.bin",
+              "gen2.b.bin"
+            ]
+          }
+        }
+      ],
+      "leak_scan": {
+        "leaks": [],
+        "passed": true
+      }
+    },
+    {
+      "case_id": "03_kill_after_both_written",
+      "group_id": "grp_both",
+      "steps": [
+        {
+          "step": "g",
+          "ok": true,
+          "result": {
+            "group_id": "grp_both",
+            "created_ms": 1700000000000
+          }
+        },
+        {
+          "step": "w",
+          "ok": true,
+          "result": {
+            "proc": "worker1",
+            "pid": 42792
+          }
+        },
+        {
+          "step": "kill",
+          "ok": true,
+          "result": {
+            "action": "kill",
+            "hook": "prepare.after_both_written"
+          }
+        },
+        {
+          "step": "wr",
+          "ok": false,
+          "code": "E_WORKER_KILLED",
+          "message": "no output (terminated)",
+          "returncode": 1
+        },
+        {
+          "step": "rec",
+          "ok": true,
+          "result": {
+            "group_id": "grp_both",
+            "kept": [],
+            "orphan_files_removed": [],
+            "tmp_files_removed": [],
+            "abandoned_prepares": [],
+            "staging_pending": [
+              {
+                "gen": 1,
+                "token": "c9263bce1cc56f52e507ae3ac52f93d624c2c641c7ac35cbd89bbf694a1e01f6",
+                "committed": false
+              }
+            ]
+          }
+        },
+        {
+          "step": "snap",
+          "ok": true,
+          "result": {
+            "group_id": "grp_both",
+            "next_gen": 2,
+            "active_gen": null,
+            "old_gen": null,
+            "old_deadline_ms": null,
+            "generations": [
+              {
+                "gen": 1,
+                "group_id": "grp_both",
+                "status": "staging",
+                "digest_a": "fa95bff1f21d4a529a95a25b32a9cfe311ffce08bf1cbf9eac755642eddfe3f2",
+                "digest_b": "fa95bff1f21d4a529a95a25b32a9cfe311ffce08bf1cbf9eac755642eddfe3f2",
+                "created_ms": 1700000000000,
+                "published_ms": null,
+                "revoked_ms": null,
+                "deadline_ms": null,
+                "superseded_ms": null,
+                "seed_tag": "seed-both"
+              }
+            ],
+            "prep_ledger": [
+              {
+                "token": "c9263bce1cc56f52e507ae3ac52f93d624c2c641c7ac35cbd89bbf694a1e01f6",
+                "gen": 1,
+                "committed": 0
+              }
+            ],
+            "receipts": [],
+            "audit_log": [
+              {
+                "id": 1,
+                "event_ms": 1700000000000,
+                "gen": null,
+                "action": "group_created",
+                "detail": "{}"
+              },
+              {
+                "id": 2,
+                "event_ms": 1700000000000,
+                "gen": 1,
+                "action": "prepare_allocated",
+                "detail": "{\"digest\":\"fa95bff1f21d4a529a95a25b32a9cfe311ffce08bf1cbf9eac755642eddfe3f2\"}"
+              }
+            ]
+          }
+        },
+        {
+          "step": "files",
+          "ok": true,
+          "result": {
+            "files": [
+              "gen1.a.bin",
+              "gen1.b.bin"
+            ]
+          }
+        },
+        {
+          "step": "pub",
+          "ok": true,
+          "result": {
+            "gen": 1,
+            "active_gen": 1,
+            "old_gen": null,
+            "old_deadline_ms": null,
+            "replayed": false
+          }
+        },
+        {
+          "step": "s",
+          "ok": true,
+          "result": {
+            "request_id": "req-both",
+            "gen": 1,
+            "event_digest": "2ecad34ab47b20e2afa0e90f39eecf273444915882a64b40be6471cf370a97db",
+            "mac": "5165bb41d23692a12c9d1e3e5cf0d921533df7563e2243b52dc29aba653d69eb",
+            "replayed": false
+          }
+        }
+      ],
+      "leak_scan": {
+        "leaks": [],
+        "passed": true
+      }
+    },
+    {
+      "case_id": "04_kill_after_commit",
+      "group_id": "grp_commit",
+      "steps": [
+        {
+          "step": "g",
+          "ok": true,
+          "result": {
+            "group_id": "grp_commit",
+            "created_ms": 1700000000000
+          }
+        },
+        {
+          "step": "p",
+          "ok": true,
+          "result": {
+            "token": "79a8f8f80aa325b8a6c30443c81654465f26397315b7b56c017f5c8b65e84f97",
+            "gen": 1,
+            "digest": "7645787d119421f6cdc8a9fc3dadd34d688764e1694472535f903542f5de2966",
+            "paths": {
+              "a": "D:\\my-workspace\\ai-workspace\\zhongqiang\\CC_Codex 用户反馈标注(领域专项)项目\\准备配置\\并行作答_20261117\\批次\\20261120\\12744\\本题\\作答工作区\\runs\\cases\\04_kill_after_commit\\data\\keystore\\groups\\grp_commit\\gen1.a.bin",
+              "b": "D:\\my-workspace\\ai-workspace\\zhongqiang\\CC_Codex 用户反馈标注(领域专项)项目\\准备配置\\并行作答_20261117\\批次\\20261120\\12744\\本题\\作答工作区\\runs\\cases\\04_kill_after_commit\\data\\keystore\\groups\\grp_commit\\gen1.b.bin"
+            },
+            "committed": true
+          }
+        },
+        {
+          "step": "w",
+          "ok": true,
+          "result": {
+            "proc": "worker1",
+            "pid": 13796
+          }
+        },
+        {
+          "step": "kill",
+          "ok": true,
+          "result": {
+            "action": "kill",
+            "hook": "publish.after_commit"
+          }
+        },
+        {
+          "step": "wr",
+          "ok": false,
+          "code": "E_WORKER_KILLED",
+          "message": "no output (terminated)",
+          "returncode": 1
+        },
+        {
+          "step": "snap1",
+          "ok": true,
+          "result": {
+            "group_id": "grp_commit",
+            "next_gen": 2,
+            "active_gen": 1,
+            "old_gen": null,
+            "old_deadline_ms": null,
+            "generations": [
+              {
+                "gen": 1,
+                "group_id": "grp_commit",
+                "status": "active",
+                "digest_a": "7645787d119421f6cdc8a9fc3dadd34d688764e1694472535f903542f5de2966",
+                "digest_b": "7645787d119421f6cdc8a9fc3dadd34d688764e1694472535f903542f5de2966",
+                "created_ms": 1700000000000,
+                "published_ms": 1700000000000,
+                "revoked_ms": null,
+                "deadline_ms": null,
+                "superseded_ms": null,
+                "seed_tag": "seed-commit"
+              }
+            ],
+            "prep_ledger": [],
+            "receipts": [],
+            "audit_log": [
+              {
+                "id": 1,
+                "event_ms": 1700000000000,
+                "gen": null,
+                "action": "group_created",
+                "detail": "{}"
+              },
+              {
+                "id": 2,
+                "event_ms": 1700000000000,
+                "gen": 1,
+                "action": "prepare_allocated",
+                "detail": "{\"digest\":\"7645787d119421f6cdc8a9fc3dadd34d688764e1694472535f903542f5de2966\"}"
+              },
+              {
+                "id": 3,
+                "event_ms": 1700000000000,
+                "gen": 1,
+                "action": "prepare_committed",
+                "detail": "{\"copies\":[\"a\",\"b\"],\"digest\":\"7645787d119421f6cdc8a9fc3dadd34d688764e1694472535f903542f5de2966\"}"
+              },
+              {
+                "id": 4,
+                "event_ms": 1700000000000,
+                "gen": 1,
+                "action": "gen_published",
+                "detail": "{\"old_deadline_ms\":null,\"old_gen\":null}"
+              }
+            ]
+          }
+        },
+        {
+          "step": "retry",
+          "ok": true,
+          "result": {
+            "gen": 1,
+            "active_gen": 1,
+            "old_gen": 1,
+            "old_deadline_ms": null,
+            "replayed": true
+          }
+        },
+        {
+          "step": "s",
+          "ok": true,
+          "result": {
+            "request_id": "req-c1",
+            "gen": 1,
+            "event_digest": "72bb45568b6594cd3be83159687696969d8aab41a87cd44b340896864e49c193",
+            "mac": "f33e52b929bdc4f07271fc834750b221d6aa7cd7a39be30a44ac8a12aaeede67",
+            "replayed": false
+          }
+        }
+      ],
+      "leak_scan": {
+        "leaks": [],
+        "passed": true
+      }
+    },
+    {
+      "case_id": "05_same_gen_two_writers",
+      "group_id": "grp_race",
+      "steps": [
+        {
+          "step": "g",
+          "ok": true,
+          "result": {
+            "group_id": "grp_race",
+            "created_ms": 1700000000000
+          }
+        },
+        {
+          "step": "p1",
+          "ok": true,
+          "result": {
+            "token": "6cec5c354252c2730ef23310fef853fd4a72b91608258b37bc12a4fa76f5ee58",
+            "gen": 1,
+            "digest": "3af244e77938b4bbbe3385a17fc2490bc088fa1379360445ba6107f35574217f",
+            "paths": {
+              "a": "D:\\my-workspace\\ai-workspace\\zhongqiang\\CC_Codex 用户反馈标注(领域专项)项目\\准备配置\\并行作答_20261117\\批次\\20261120\\12744\\本题\\作答工作区\\runs\\cases\\05_same_gen_two_writers\\data\\keystore\\groups\\grp_race\\gen1.a.bin",
+              "b": "D:\\my-workspace\\ai-workspace\\zhongqiang\\CC_Codex 用户反馈标注(领域专项)项目\\准备配置\\并行作答_20261117\\批次\\20261120\\12744\\本题\\作答工作区\\runs\\cases\\05_same_gen_two_writers\\data\\keystore\\groups\\grp_race\\gen1.b.bin"
+            },
+            "committed": true
+          }
+        },
+        {
+          "step": "p2",
+          "ok": false,
+          "code": "E_STAGING_EXISTS",
+          "message": "staging gen 1 already prepared",
+          "details": {
+            "gen": 1
+          }
+        },
+        {
+          "step": "p3",
+          "ok": true,
+          "result": {
+            "token": "24e5fbe9fe40a7c1d2524f90b450e24af5ea7f4e54d1d3a7d50c5e990f380ffe",
+            "gen": 2,
+            "digest": "2edd2e615c1ee4f6679291c286914e75d2e26a84dae147ced3e70eafda2d38f6",
+            "paths": {
+              "a": "D:\\my-workspace\\ai-workspace\\zhongqiang\\CC_Codex 用户反馈标注(领域专项)项目\\准备配置\\并行作答_20261117\\批次\\20261120\\12744\\本题\\作答工作区\\runs\\cases\\05_same_gen_two_writers\\data\\keystore\\groups\\grp_race\\gen2.a.bin",
+              "b": "D:\\my-workspace\\ai-workspace\\zhongqiang\\CC_Codex 用户反馈标注(领域专项)项目\\准备配置\\并行作答_20261117\\批次\\20261120\\12744\\本题\\作答工作区\\runs\\cases\\05_same_gen_two_writers\\data\\keystore\\groups\\grp_race\\gen2.b.bin"
+            },
+            "committed": true
+          }
+        },
+        {
+          "step": "snap",
+          "ok": true,
+          "result": {
+            "group_id": "grp_race",
+            "next_gen": 3,
+            "active_gen": null,
+            "old_gen": null,
+            "old_deadline_ms": null,
+            "generations": [
+              {
+                "gen": 1,
+                "group_id": "grp_race",
+                "status": "superseded",
+                "digest_a": "3af244e77938b4bbbe3385a17fc2490bc088fa1379360445ba6107f35574217f",
+                "digest_b": "3af244e77938b4bbbe3385a17fc2490bc088fa1379360445ba6107f35574217f",
+                "created_ms": 1700000000000,
+                "published_ms": null,
+                "revoked_ms": null,
+                "deadline_ms": null,
+                "superseded_ms": 1700000000000,
+                "seed_tag": "seed-race-1"
+              },
+              {
+                "gen": 2,
+                "group_id": "grp_race",
+                "status": "staging",
+                "digest_a": "2edd2e615c1ee4f6679291c286914e75d2e26a84dae147ced3e70eafda2d38f6",
+                "digest_b": "2edd2e615c1ee4f6679291c286914e75d2e26a84dae147ced3e70eafda2d38f6",
+                "created_ms": 1700000000000,
+                "published_ms": null,
+                "revoked_ms": null,
+                "deadline_ms": null,
+                "superseded_ms": null,
+                "seed_tag": "seed-race-3"
+              }
+            ],
+            "prep_ledger": [
+              {
+                "token": "24e5fbe9fe40a7c1d2524f90b450e24af5ea7f4e54d1d3a7d50c5e990f380ffe",
+                "gen": 2,
+                "committed": 1
+              }
+            ],
+            "receipts": [],
+            "audit_log": [
+              {
+                "id": 1,
+                "event_ms": 1700000000000,
+                "gen": null,
+                "action": "group_created",
+                "detail": "{}"
+              },
+              {
+                "id": 2,
+                "event_ms": 1700000000000,
+                "gen": 1,
+                "action": "prepare_allocated",
+                "detail": "{\"digest\":\"3af244e77938b4bbbe3385a17fc2490bc088fa1379360445ba6107f35574217f\"}"
+              },
+              {
+                "id": 3,
+                "event_ms": 1700000000000,
+                "gen": 1,
+                "action": "prepare_committed",
+                "detail": "{\"copies\":[\"a\",\"b\"],\"digest\":\"3af244e77938b4bbbe3385a17fc2490bc088fa1379360445ba6107f35574217f\"}"
+              },
+              {
+                "id": 4,
+                "event_ms": 1700000000000,
+                "gen": 1,
+                "action": "staging_superseded",
+                "detail": "{\"by\":\"replace_prepare\"}"
+              },
+              {
+                "id": 5,
+                "event_ms": 1700000000000,
+                "gen": 2,
+                "action": "prepare_allocated",
+                "detail": "{\"digest\":\"2edd2e615c1ee4f6679291c286914e75d2e26a84dae147ced3e70eafda2d38f6\"}"
+              },
+              {
+                "id": 6,
+                "event_ms": 1700000000000,
+                "gen": 2,
+                "action": "prepare_committed",
+                "detail": "{\"copies\":[\"a\",\"b\"],\"digest\":\"2edd2e615c1ee4f6679291c286914e75d2e26a84dae147ced3e70eafda2d38f6\"}"
+              }
+            ]
+          }
+        },
+        {
+          "step": "pub_orphan",
+          "ok": false,
+          "code": "E_TOKEN_SUPERSEDED",
+          "message": "token gen 1 was superseded before publish",
+          "details": {
+            "gen": 1
+          }
+        },
+        {
+          "step": "pub2",
+          "ok": true,
+          "result": {
+            "gen": 2,
+            "active_gen": 2,
+            "old_gen": null,
+            "old_deadline_ms": null,
+            "replayed": false
+          }
+        }
+      ],
+      "leak_scan": {
+        "leaks": [],
+        "passed": true
+      }
+    },
+    {
+      "case_id": "06_staging_baseline_replaced",
+      "group_id": "grp_base",
+      "steps": [
+        {
+          "step": "g",
+          "ok": true,
+          "result": {
+            "group_id": "grp_base",
+            "created_ms": 1700000000000
+          }
+        },
+        {
+          "step": "p1",
+          "ok": true,
+          "result": {
+            "token": "2ecbfac07bbc38539b192f5644d038c75f8fdf70fc8f3fed8b255494b1368332",
+            "gen": 1,
+            "digest": "0f4f499af7dce54c9322f78a4f1eb9825f124e5bcc259050dc1f7b636e59ad5c",
+            "paths": {
+              "a": "D:\\my-workspace\\ai-workspace\\zhongqiang\\CC_Codex 用户反馈标注(领域专项)项目\\准备配置\\并行作答_20261117\\批次\\20261120\\12744\\本题\\作答工作区\\runs\\cases\\06_staging_baseline_replaced\\data\\keystore\\groups\\grp_base\\gen1.a.bin",
+              "b": "D:\\my-workspace\\ai-workspace\\zhongqiang\\CC_Codex 用户反馈标注(领域专项)项目\\准备配置\\并行作答_20261117\\批次\\20261120\\12744\\本题\\作答工作区\\runs\\cases\\06_staging_baseline_replaced\\data\\keystore\\groups\\grp_base\\gen1.b.bin"
+            },
+            "committed": true
+          }
+        },
+        {
+          "step": "pub1",
+          "ok": true,
+          "result": {
+            "gen": 1,
+            "active_gen": 1,
+            "old_gen": null,
+            "old_deadline_ms": null,
+            "replayed": false
+          }
+        },
+        {
+          "step": "p2",
+          "ok": true,
+          "result": {
+            "token": "c62192191072c5c9ddffa7b3cc6b5271ea443a580ff0df59c90d8fc31ed86b89",
+            "gen": 2,
+            "digest": "fc3e36684dae0f6f4993b9add3130394c0f069141bd424338d75e909cec80276",
+            "paths": {
+              "a": "D:\\my-workspace\\ai-workspace\\zhongqiang\\CC_Codex 用户反馈标注(领域专项)项目\\准备配置\\并行作答_20261117\\批次\\20261120\\12744\\本题\\作答工作区\\runs\\cases\\06_staging_baseline_replaced\\data\\keystore\\groups\\grp_base\\gen2.a.bin",
+              "b": "D:\\my-workspace\\ai-workspace\\zhongqiang\\CC_Codex 用户反馈标注(领域专项)项目\\准备配置\\并行作答_20261117\\批次\\20261120\\12744\\本题\\作答工作区\\runs\\cases\\06_staging_baseline_replaced\\data\\keystore\\groups\\grp_base\\gen2.b.bin"
+            },
+            "committed": true
+          }
+        },
+        {
+          "step": "p3",
+          "ok": true,
+          "result": {
+            "token": "ac021ee4e91c303685fce0de4a90550227d26eda419b8925792293fe76ea0636",
+            "gen": 3,
+            "digest": "3448167c4bda242062c563dbf8e3552db0a7b3aaa1a8f65fbed2a64bbf7ac5b7",
+            "paths": {
+              "a": "D:\\my-workspace\\ai-workspace\\zhongqiang\\CC_Codex 用户反馈标注(领域专项)项目\\准备配置\\并行作答_20261117\\批次\\20261120\\12744\\本题\\作答工作区\\runs\\cases\\06_staging_baseline_replaced\\data\\keystore\\groups\\grp_base\\gen3.a.bin",
+              "b": "D:\\my-workspace\\ai-workspace\\zhongqiang\\CC_Codex 用户反馈标注(领域专项)项目\\准备配置\\并行作答_20261117\\批次\\20261120\\12744\\本题\\作答工作区\\runs\\cases\\06_staging_baseline_replaced\\data\\keystore\\groups\\grp_base\\gen3.b.bin"
+            },
+            "committed": true
+          }
+        },
+        {
+          "step": "pub_stale",
+          "ok": false,
+          "code": "E_TOKEN_SUPERSEDED",
+          "message": "token gen 2 was superseded before publish",
+          "details": {
+            "gen": 2
+          }
+        },
+        {
+          "step": "pub3",
+          "ok": true,
+          "result": {
+            "gen": 3,
+            "active_gen": 3,
+            "old_gen": 1,
+            "old_deadline_ms": 1700000005000,
+            "replayed": false
+          }
+        },
+        {
+          "step": "s",
+          "ok": true,
+          "result": {
+            "request_id": "req-base",
+            "gen": 3,
+            "event_digest": "de6730a31ff378d595fdf35e7196ba5e496ef828f4904024dd6dbfdb5e478f80",
+            "mac": "9f8e862cc4665bcea0916d9a4944e04cba70e011c8edb6fdf52a93cc4c24f40e",
+            "replayed": false
+          }
+        }
+      ],
+      "leak_scan": {
+        "leaks": [],
+        "passed": true
+      }
+    },
+    {
+      "case_id": "07_single_copy_corruption",
+      "group_id": "grp_corrupt",
+      "steps": [
+        {
+          "step": "g",
+          "ok": true,
+          "result": {
+            "group_id": "grp_corrupt",
+            "created_ms": 1700000000000
+          }
+        },
+        {
+          "step": "p1",
+          "ok": true,
+          "result": {
+            "token": "305c6317f68b349e172e7c2381498acc738db6a9e957812e90d0da9b77637e32",
+            "gen": 1,
+            "digest": "d08b14d1726a5a2fa758eb7cd9fe4be41f05f5450e972cf5d287d6f1e503dc17",
+            "paths": {
+              "a": "D:\\my-workspace\\ai-workspace\\zhongqiang\\CC_Codex 用户反馈标注(领域专项)项目\\准备配置\\并行作答_20261117\\批次\\20261120\\12744\\本题\\作答工作区\\runs\\cases\\07_single_copy_corruption\\data\\keystore\\groups\\grp_corrupt\\gen1.a.bin",
+              "b": "D:\\my-workspace\\ai-workspace\\zhongqiang\\CC_Codex 用户反馈标注(领域专项)项目\\准备配置\\并行作答_20261117\\批次\\20261120\\12744\\本题\\作答工作区\\runs\\cases\\07_single_copy_corruption\\data\\keystore\\groups\\grp_corrupt\\gen1.b.bin"
+            },
+            "committed": true
+          }
+        },
+        {
+          "step": "pub1",
+          "ok": true,
+          "result": {
+            "gen": 1,
+            "active_gen": 1,
+            "old_gen": null,
+            "old_deadline_ms": null,
+            "replayed": false
+          }
+        },
+        {
+          "step": "s1",
+          "ok": true,
+          "result": {
+            "request_id": "req-corr-1",
+            "gen": 1,
+            "event_digest": "0eb57f12b6d2d413bd34577ec756edb80ec39a8726b86cac0ec25e35de1d12ae",
+            "mac": "1bb708e46d857b3f84bf437330b7be5257c399e974b968cc393051295426bd7b",
+            "replayed": false
+          }
+        },
+        {
+          "step": "p2",
+          "ok": true,
+          "result": {
+            "token": "2782be7bd3a7027aba1e89488e5756d23902b9ec90c41aeaec4948cff5d49931",
+            "gen": 2,
+            "digest": "1d72d5c85672763ceaf98b4a42d549fdb50ccee546c939d96f80d6e951beb89d",
+            "paths": {
+              "a": "D:\\my-workspace\\ai-workspace\\zhongqiang\\CC_Codex 用户反馈标注(领域专项)项目\\准备配置\\并行作答_20261117\\批次\\20261120\\12744\\本题\\作答工作区\\runs\\cases\\07_single_copy_corruption\\data\\keystore\\groups\\grp_corrupt\\gen2.a.bin",
+              "b": "D:\\my-workspace\\ai-workspace\\zhongqiang\\CC_Codex 用户反馈标注(领域专项)项目\\准备配置\\并行作答_20261117\\批次\\20261120\\12744\\本题\\作答工作区\\runs\\cases\\07_single_copy_corruption\\data\\keystore\\groups\\grp_corrupt\\gen2.b.bin"
+            },
+            "committed": true
+          }
+        },
+        {
+          "step": "pub2",
+          "ok": true,
+          "result": {
+            "gen": 2,
+            "active_gen": 2,
+            "old_gen": 1,
+            "old_deadline_ms": 1700000100000,
+            "replayed": false
+          }
+        },
+        {
+          "step": "bad_a",
+          "ok": true,
+          "result": {
+            "path": "D:\\my-workspace\\ai-workspace\\zhongqiang\\CC_Codex 用户反馈标注(领域专项)项目\\准备配置\\并行作答_20261117\\批次\\20261120\\12744\\本题\\作答工作区\\runs\\cases\\07_single_copy_corruption\\data\\keystore\\groups\\grp_corrupt\\gen2.a.bin",
+            "mode": "garbage"
+          }
+        },
+        {
+          "step": "s2",
+          "ok": true,
+          "result": {
+            "request_id": "req-corr-2",
+            "gen": 2,
+            "event_digest": "f0501aae7a68811b320d215d2fdb239482d21ec27ac2e50f14637a52b96a11ae",
+            "mac": "9eb5953c3ccbefe1da5d6fc573ee920995c910c459c9370090e9309f1f452e54",
+            "replayed": false
+          }
+        },
+        {
+          "step": "bad_b",
+          "ok": true,
+          "result": {
+            "path": "D:\\my-workspace\\ai-workspace\\zhongqiang\\CC_Codex 用户反馈标注(领域专项)项目\\准备配置\\并行作答_20261117\\批次\\20261120\\12744\\本题\\作答工作区\\runs\\cases\\07_single_copy_corruption\\data\\keystore\\groups\\grp_corrupt\\gen2.b.bin",
+            "mode": "delete"
+          }
+        },
+        {
+          "step": "s3_fail",
+          "ok": false,
+          "code": "E_MATERIAL_UNAVAILABLE",
+          "message": "no verified copy for gen 2",
+          "details": {
+            "gen": 2,
+            "copies": {
+              "a": "E_DIGEST_MISMATCH",
+              "b": "missing"
+            }
+          }
+        },
+        {
+          "step": "v_old",
+          "ok": true,
+          "result": {
+            "gen": 1,
+            "status": "retired",
+            "valid": true
+          }
+        },
+        {
+          "step": "snap",
+          "ok": true,
+          "result": {
+            "group_id": "grp_corrupt",
+            "next_gen": 3,
+            "active_gen": 2,
+            "old_gen": 1,
+            "old_deadline_ms": 1700000100000,
+            "generations": [
+              {
+                "gen": 1,
+                "group_id": "grp_corrupt",
+                "status": "retired",
+                "digest_a": "d08b14d1726a5a2fa758eb7cd9fe4be41f05f5450e972cf5d287d6f1e503dc17",
+                "digest_b": "d08b14d1726a5a2fa758eb7cd9fe4be41f05f5450e972cf5d287d6f1e503dc17",
+                "created_ms": 1700000000000,
+                "published_ms": 1700000000000,
+                "revoked_ms": null,
+                "deadline_ms": 1700000100000,
+                "superseded_ms": null,
+                "seed_tag": "seed-corr-1"
+              },
+              {
+                "gen": 2,
+                "group_id": "grp_corrupt",
+                "status": "active",
+                "digest_a": "1d72d5c85672763ceaf98b4a42d549fdb50ccee546c939d96f80d6e951beb89d",
+                "digest_b": "1d72d5c85672763ceaf98b4a42d549fdb50ccee546c939d96f80d6e951beb89d",
+                "created_ms": 1700000000000,
+                "published_ms": 1700000000000,
+                "revoked_ms": null,
+                "deadline_ms": null,
+                "superseded_ms": null,
+                "seed_tag": "seed-corr-2"
+              }
+            ],
+            "prep_ledger": [],
+            "receipts": [
+              {
+                "request_id": "req-corr-1",
+                "kind": "sign",
+                "gen": 1,
+                "event_digest": "0eb57f12b6d2d413bd34577ec756edb80ec39a8726b86cac0ec25e35de1d12ae",
+                "mac": "1bb708e46d857b3f84bf437330b7be5257c399e974b968cc393051295426bd7b",
+                "created_ms": 1700000000000
+              },
+              {
+                "request_id": "req-corr-2",
+                "kind": "sign",
+                "gen": 2,
+                "event_digest": "f0501aae7a68811b320d215d2fdb239482d21ec27ac2e50f14637a52b96a11ae",
+                "mac": "9eb5953c3ccbefe1da5d6fc573ee920995c910c459c9370090e9309f1f452e54",
+                "created_ms": 1700000000000
+              }
+            ],
+            "audit_log": [
+              {
+                "id": 1,
+                "event_ms": 1700000000000,
+                "gen": null,
+                "action": "group_created",
+                "detail": "{}"
+              },
+              {
+                "id": 2,
+                "event_ms": 1700000000000,
+                "gen": 1,
+                "action": "prepare_allocated",
+                "detail": "{\"digest\":\"d08b14d1726a5a2fa758eb7cd9fe4be41f05f5450e972cf5d287d6f1e503dc17\"}"
+              },
+              {
+                "id": 3,
+                "event_ms": 1700000000000,
+                "gen": 1,
+                "action": "prepare_committed",
+                "detail": "{\"copies\":[\"a\",\"b\"],\"digest\":\"d08b14d1726a5a2fa758eb7cd9fe4be41f05f5450e972cf5d287d6f1e503dc17\"}"
+              },
+              {
+                "id": 4,
+                "event_ms": 1700000000000,
+                "gen": 1,
+                "action": "gen_published",
+                "detail": "{\"old_deadline_ms\":null,\"old_gen\":null}"
+              },
+              {
+                "id": 5,
+                "event_ms": 1700000000000,
+                "gen": 1,
+                "action": "signed",
+                "detail": "{\"copy_slot\":\"a\",\"event_digest\":\"0eb57f12b6d2d413bd34577ec756edb80ec39a8726b86cac0ec25e35de1d12ae\",\"request_id\":\"req-corr-1\"}"
+              },
+              {
+                "id": 6,
+                "event_ms": 1700000000000,
+                "gen": 2,
+                "action": "prepare_allocated",
+                "detail": "{\"digest\":\"1d72d5c85672763ceaf98b4a42d549fdb50ccee546c939d96f80d6e951beb89d\"}"
+              },
+              {
+                "id": 7,
+                "event_ms": 1700000000000,
+                "gen": 2,
+                "action": "prepare_committed",
+                "detail": "{\"copies\":[\"a\",\"b\"],\"digest\":\"1d72d5c85672763ceaf98b4a42d549fdb50ccee546c939d96f80d6e951beb89d\"}"
+              },
+              {
+                "id": 8,
+                "event_ms": 1700000000000,
+                "gen": 1,
+                "action": "gen_retired",
+                "detail": "{\"deadline_ms\":1700000100000}"
+              },
+              {
+                "id": 9,
+                "event_ms": 1700000000000,
+                "gen": 2,
+                "action": "gen_published",
+                "detail": "{\"old_deadline_ms\":1700000100000,\"old_gen\":1}"
+              },
+              {
+                "id": 10,
+                "event_ms": 1700000000000,
+                "gen": 2,
+                "action": "signed",
+                "detail": "{\"copy_slot\":\"b\",\"event_digest\":\"f0501aae7a68811b320d215d2fdb239482d21ec27ac2e50f14637a52b96a11ae\",\"request_id\":\"req-corr-2\"}"
+              },
+              {
+                "id": 11,
+                "event_ms": 1700000000000,
+                "gen": 1,
+                "action": "verified",
+                "detail": "{\"status\":\"retired\",\"valid\":true}"
+              }
+            ]
+          }
+        }
+      ],
+      "leak_scan": {
+        "leaks": [],
+        "passed": true
+      }
+    },
+    {
+      "case_id": "08_old_gen_deadline_boundary",
+      "group_id": "grp_deadline",
+      "steps": [
+        {
+          "step": "g",
+          "ok": true,
+          "result": {
+            "group_id": "grp_deadline",
+            "created_ms": 1700000000000
+          }
+        },
+        {
+          "step": "p1",
+          "ok": true,
+          "result": {
+            "token": "c39bb41eae10c2510e4dab4e12a57116d287a652b87dd08011da5350ef2c56e8",
+            "gen": 1,
+            "digest": "50fc5008299d22093200f4c628d1c495b45051e1d7378601c93d8f15af312f77",
+            "paths": {
+              "a": "D:\\my-workspace\\ai-workspace\\zhongqiang\\CC_Codex 用户反馈标注(领域专项)项目\\准备配置\\并行作答_20261117\\批次\\20261120\\12744\\本题\\作答工作区\\runs\\cases\\08_old_gen_deadline_boundary\\data\\keystore\\groups\\grp_deadline\\gen1.a.bin",
+              "b": "D:\\my-workspace\\ai-workspace\\zhongqiang\\CC_Codex 用户反馈标注(领域专项)项目\\准备配置\\并行作答_20261117\\批次\\20261120\\12744\\本题\\作答工作区\\runs\\cases\\08_old_gen_deadline_boundary\\data\\keystore\\groups\\grp_deadline\\gen1.b.bin"
+            },
+            "committed": true
+          }
+        },
+        {
+          "step": "pub1",
+          "ok": true,
+          "result": {
+            "gen": 1,
+            "active_gen": 1,
+            "old_gen": null,
+            "old_deadline_ms": null,
+            "replayed": false
+          }
+        },
+        {
+          "step": "s1",
+          "ok": true,
+          "result": {
+            "request_id": "req-dl-1",
+            "gen": 1,
+            "event_digest": "c8655486e7a5d950f503395f569542a72708cc8d54980a39f97f22a23deca49f",
+            "mac": "4e5067f0f8d52b694bf4892af9c24c5718a746b1e55bccfa00361bbecb2be1d7",
+            "replayed": false
+          }
+        },
+        {
+          "step": "p2",
+          "ok": true,
+          "result": {
+            "token": "e81f83f0f4a8eef6158a7af0c69c7a10380aae9d3cbe7bfc87ffba724660a810",
+            "gen": 2,
+            "digest": "bd78dd6d30a0e1f3a4317bb31357ccee2136998013a3a8850710ff7ba4642478",
+            "paths": {
+              "a": "D:\\my-workspace\\ai-workspace\\zhongqiang\\CC_Codex 用户反馈标注(领域专项)项目\\准备配置\\并行作答_20261117\\批次\\20261120\\12744\\本题\\作答工作区\\runs\\cases\\08_old_gen_deadline_boundary\\data\\keystore\\groups\\grp_deadline\\gen2.a.bin",
+              "b": "D:\\my-workspace\\ai-workspace\\zhongqiang\\CC_Codex 用户反馈标注(领域专项)项目\\准备配置\\并行作答_20261117\\批次\\20261120\\12744\\本题\\作答工作区\\runs\\cases\\08_old_gen_deadline_boundary\\data\\keystore\\groups\\grp_deadline\\gen2.b.bin"
+            },
+            "committed": true
+          }
+        },
+        {
+          "step": "pub2",
+          "ok": true,
+          "result": {
+            "gen": 2,
+            "active_gen": 2,
+            "old_gen": 1,
+            "old_deadline_ms": 1700000001000,
+            "replayed": false
+          }
+        },
+        {
+          "step": "adv_eq",
+          "ok": true,
+          "result": {
+            "now_ms": 1700000001000
+          }
+        },
+        {
+          "step": "v_eq",
+          "ok": true,
+          "result": {
+            "gen": 1,
+            "status": "retired",
+            "valid": true
+          }
+        },
+        {
+          "step": "adv_over",
+          "ok": true,
+          "result": {
+            "now_ms": 1700000001001
+          }
+        },
+        {
+          "step": "v_over",
+          "ok": false,
+          "code": "E_OLD_GEN_EXPIRED",
+          "message": "retired gen 1 past verify deadline",
+          "details": {
+            "gen": 1,
+            "deadline_ms": 1700000001000
+          }
+        }
+      ],
+      "leak_scan": {
+        "leaks": [],
+        "passed": true
+      }
+    },
+    {
+      "case_id": "09_revoked_never_reissued",
+      "group_id": "grp_revoke",
+      "steps": [
+        {
+          "step": "g",
+          "ok": true,
+          "result": {
+            "group_id": "grp_revoke",
+            "created_ms": 1700000000000
+          }
+        },
+        {
+          "step": "p1",
+          "ok": true,
+          "result": {
+            "token": "2d7ca7a1f65658f95cfcc95cfa61f06ad370bf6d403e515fbfbcbe92dcff89f6",
+            "gen": 1,
+            "digest": "ece457accccd162046b6818f7e9bfff7012e6fc729cec941943ad4a9b440171b",
+            "paths": {
+              "a": "D:\\my-workspace\\ai-workspace\\zhongqiang\\CC_Codex 用户反馈标注(领域专项)项目\\准备配置\\并行作答_20261117\\批次\\20261120\\12744\\本题\\作答工作区\\runs\\cases\\09_revoked_never_reissued\\data\\keystore\\groups\\grp_revoke\\gen1.a.bin",
+              "b": "D:\\my-workspace\\ai-workspace\\zhongqiang\\CC_Codex 用户反馈标注(领域专项)项目\\准备配置\\并行作答_20261117\\批次\\20261120\\12744\\本题\\作答工作区\\runs\\cases\\09_revoked_never_reissued\\data\\keystore\\groups\\grp_revoke\\gen1.b.bin"
+            },
+            "committed": true
+          }
+        },
+        {
+          "step": "pub1",
+          "ok": true,
+          "result": {
+            "gen": 1,
+            "active_gen": 1,
+            "old_gen": null,
+            "old_deadline_ms": null,
+            "replayed": false
+          }
+        },
+        {
+          "step": "s1",
+          "ok": true,
+          "result": {
+            "request_id": "req-rv",
+            "gen": 1,
+            "event_digest": "8c78d69676fa3cb2aea91ed1ac95e25cc3cc1046101005cf5d1d90f2299ae186",
+            "mac": "126ceeccf8d1945a0c6067bc8f5deb3428b1ce9d740b36035ca2c1358103f7c8",
+            "replayed": false
+          }
+        },
+        {
+          "step": "p2",
+          "ok": true,
+          "result": {
+            "token": "31da524af7167149d69a52385d2f868d744f3cb647b01376f3980934cc917813",
+            "gen": 2,
+            "digest": "0ef37ba8dfab558533c467d1e62972cd76a0ebf8fca708722e975f37af248e64",
+            "paths": {
+              "a": "D:\\my-workspace\\ai-workspace\\zhongqiang\\CC_Codex 用户反馈标注(领域专项)项目\\准备配置\\并行作答_20261117\\批次\\20261120\\12744\\本题\\作答工作区\\runs\\cases\\09_revoked_never_reissued\\data\\keystore\\groups\\grp_revoke\\gen2.a.bin",
+              "b": "D:\\my-workspace\\ai-workspace\\zhongqiang\\CC_Codex 用户反馈标注(领域专项)项目\\准备配置\\并行作答_20261117\\批次\\20261120\\12744\\本题\\作答工作区\\runs\\cases\\09_revoked_never_reissued\\data\\keystore\\groups\\grp_revoke\\gen2.b.bin"
+            },
+            "committed": true
+          }
+        },
+        {
+          "step": "pub2",
+          "ok": true,
+          "result": {
+            "gen": 2,
+            "active_gen": 2,
+            "old_gen": 1,
+            "old_deadline_ms": 1700000010000,
+            "replayed": false
+          }
+        },
+        {
+          "step": "rev",
+          "ok": true,
+          "result": {
+            "gen": 1,
+            "status": "revoked"
+          }
+        },
+        {
+          "step": "v_rev",
+          "ok": false,
+          "code": "E_REVOKED_GEN",
+          "message": "gen 1 revoked",
+          "details": {
+            "gen": 1
+          }
+        },
+        {
+          "step": "p3",
+          "ok": true,
+          "result": {
+            "token": "1b8a487f7c14a147e80a19fcc2ee981a6fc1f81caf7a1ad49776ffbd0d27e6b3",
+            "gen": 3,
+            "digest": "8f39e5c01e48fd7988c3cf8c84e995b54f25f57229ca81947999090166d13823",
+            "paths": {
+              "a": "D:\\my-workspace\\ai-workspace\\zhongqiang\\CC_Codex 用户反馈标注(领域专项)项目\\准备配置\\并行作答_20261117\\批次\\20261120\\12744\\本题\\作答工作区\\runs\\cases\\09_revoked_never_reissued\\data\\keystore\\groups\\grp_revoke\\gen3.a.bin",
+              "b": "D:\\my-workspace\\ai-workspace\\zhongqiang\\CC_Codex 用户反馈标注(领域专项)项目\\准备配置\\并行作答_20261117\\批次\\20261120\\12744\\本题\\作答工作区\\runs\\cases\\09_revoked_never_reissued\\data\\keystore\\groups\\grp_revoke\\gen3.b.bin"
+            },
+            "committed": true
+          }
+        },
+        {
+          "step": "snap",
+          "ok": true,
+          "result": {
+            "group_id": "grp_revoke",
+            "next_gen": 4,
+            "active_gen": 2,
+            "old_gen": null,
+            "old_deadline_ms": null,
+            "generations": [
+              {
+                "gen": 1,
+                "group_id": "grp_revoke",
+                "status": "revoked",
+                "digest_a": "ece457accccd162046b6818f7e9bfff7012e6fc729cec941943ad4a9b440171b",
+                "digest_b": "ece457accccd162046b6818f7e9bfff7012e6fc729cec941943ad4a9b440171b",
+                "created_ms": 1700000000000,
+                "published_ms": 1700000000000,
+                "revoked_ms": 1700000000000,
+                "deadline_ms": 1700000010000,
+                "superseded_ms": null,
+                "seed_tag": "seed-rv-1"
+              },
+              {
+                "gen": 2,
+                "group_id": "grp_revoke",
+                "status": "active",
+                "digest_a": "0ef37ba8dfab558533c467d1e62972cd76a0ebf8fca708722e975f37af248e64",
+                "digest_b": "0ef37ba8dfab558533c467d1e62972cd76a0ebf8fca708722e975f37af248e64",
+                "created_ms": 1700000000000,
+                "published_ms": 1700000000000,
+                "revoked_ms": null,
+                "deadline_ms": null,
+                "superseded_ms": null,
+                "seed_tag": "seed-rv-2"
+              },
+              {
+                "gen": 3,
+                "group_id": "grp_revoke",
+                "status": "staging",
+                "digest_a": "8f39e5c01e48fd7988c3cf8c84e995b54f25f57229ca81947999090166d13823",
+                "digest_b": "8f39e5c01e48fd7988c3cf8c84e995b54f25f57229ca81947999090166d13823",
+                "created_ms": 1700000000000,
+                "published_ms": null,
+                "revoked_ms": null,
+                "deadline_ms": null,
+                "superseded_ms": null,
+                "seed_tag": "seed-rv-3"
+              }
+            ],
+            "prep_ledger": [
+              {
+                "token": "1b8a487f7c14a147e80a19fcc2ee981a6fc1f81caf7a1ad49776ffbd0d27e6b3",
+                "gen": 3,
+                "committed": 1
+              }
+            ],
+            "receipts": [
+              {
+                "request_id": "req-rv",
+                "kind": "sign",
+                "gen": 1,
+                "event_digest": "8c78d69676fa3cb2aea91ed1ac95e25cc3cc1046101005cf5d1d90f2299ae186",
+                "mac": "126ceeccf8d1945a0c6067bc8f5deb3428b1ce9d740b36035ca2c1358103f7c8",
+                "created_ms": 1700000000000
+              }
+            ],
+            "audit_log": [
+              {
+                "id": 1,
+                "event_ms": 1700000000000,
+                "gen": null,
+                "action": "group_created",
+                "detail": "{}"
+              },
+              {
+                "id": 2,
+                "event_ms": 1700000000000,
+                "gen": 1,
+                "action": "prepare_allocated",
+                "detail": "{\"digest\":\"ece457accccd162046b6818f7e9bfff7012e6fc729cec941943ad4a9b440171b\"}"
+              },
+              {
+                "id": 3,
+                "event_ms": 1700000000000,
+                "gen": 1,
+                "action": "prepare_committed",
+                "detail": "{\"copies\":[\"a\",\"b\"],\"digest\":\"ece457accccd162046b6818f7e9bfff7012e6fc729cec941943ad4a9b440171b\"}"
+              },
+              {
+                "id": 4,
+                "event_ms": 1700000000000,
+                "gen": 1,
+                "action": "gen_published",
+                "detail": "{\"old_deadline_ms\":null,\"old_gen\":null}"
+              },
+              {
+                "id": 5,
+                "event_ms": 1700000000000,
+                "gen": 1,
+                "action": "signed",
+                "detail": "{\"copy_slot\":\"a\",\"event_digest\":\"8c78d69676fa3cb2aea91ed1ac95e25cc3cc1046101005cf5d1d90f2299ae186\",\"request_id\":\"req-rv\"}"
+              },
+              {
+                "id": 6,
+                "event_ms": 1700000000000,
+                "gen": 2,
+                "action": "prepare_allocated",
+                "detail": "{\"digest\":\"0ef37ba8dfab558533c467d1e62972cd76a0ebf8fca708722e975f37af248e64\"}"
+              },
+              {
+                "id": 7,
+                "event_ms": 1700000000000,
+                "gen": 2,
+                "action": "prepare_committed",
+                "detail": "{\"copies\":[\"a\",\"b\"],\"digest\":\"0ef37ba8dfab558533c467d1e62972cd76a0ebf8fca708722e975f37af248e64\"}"
+              },
+              {
+                "id": 8,
+                "event_ms": 1700000000000,
+                "gen": 1,
+                "action": "gen_retired",
+                "detail": "{\"deadline_ms\":1700000010000}"
+              },
+              {
+                "id": 9,
+                "event_ms": 1700000000000,
+                "gen": 2,
+                "action": "gen_published",
+                "detail": "{\"old_deadline_ms\":1700000010000,\"old_gen\":1}"
+              },
+              {
+                "id": 10,
+                "event_ms": 1700000000000,
+                "gen": 1,
+                "action": "gen_revoked",
+                "detail": "{}"
+              },
+              {
+                "id": 11,
+                "event_ms": 1700000000000,
+                "gen": 3,
+                "action": "prepare_allocated",
+                "detail": "{\"digest\":\"8f39e5c01e48fd7988c3cf8c84e995b54f25f57229ca81947999090166d13823\"}"
+              },
+              {
+                "id": 12,
+                "event_ms": 1700000000000,
+                "gen": 3,
+                "action": "prepare_committed",
+                "detail": "{\"copies\":[\"a\",\"b\"],\"digest\":\"8f39e5c01e48fd7988c3cf8c84e995b54f25f57229ca81947999090166d13823\"}"
+              }
+            ]
+          }
+        }
+      ],
+      "leak_scan": {
+        "leaks": [],
+        "passed": true
+      }
+    },
+    {
+      "case_id": "10_recover_safety_foreign_files",
+      "group_id": "grp_safe",
+      "steps": [
+        {
+          "step": "g",
+          "ok": true,
+          "result": {
+            "group_id": "grp_safe",
+            "created_ms": 1700000000000
+          }
+        },
+        {
+          "step": "p1",
+          "ok": true,
+          "result": {
+            "token": "8983ace542a91568e6d482889ed0ab47671dda110b2dbbd5e3ce8b30ff6c3bd3",
+            "gen": 1,
+            "digest": "62f4d6150e8bbf4f254e44759f30c2ae1a509925c2d707b36847b086492c7c0a",
+            "paths": {
+              "a": "D:\\my-workspace\\ai-workspace\\zhongqiang\\CC_Codex 用户反馈标注(领域专项)项目\\准备配置\\并行作答_20261117\\批次\\20261120\\12744\\本题\\作答工作区\\runs\\cases\\10_recover_safety_foreign_files\\data\\keystore\\groups\\grp_safe\\gen1.a.bin",
+              "b": "D:\\my-workspace\\ai-workspace\\zhongqiang\\CC_Codex 用户反馈标注(领域专项)项目\\准备配置\\并行作答_20261117\\批次\\20261120\\12744\\本题\\作答工作区\\runs\\cases\\10_recover_safety_foreign_files\\data\\keystore\\groups\\grp_safe\\gen1.b.bin"
+            },
+            "committed": true
+          }
+        },
+        {
+          "step": "pub1",
+          "ok": true,
+          "result": {
+            "gen": 1,
+            "active_gen": 1,
+            "old_gen": null,
+            "old_deadline_ms": null,
+            "replayed": false
+          }
+        },
+        {
+          "step": "plant",
+          "ok": true,
+          "result": {
+            "path": "D:\\my-workspace\\ai-workspace\\zhongqiang\\CC_Codex 用户反馈标注(领域专项)项目\\准备配置\\并行作答_20261117\\批次\\20261120\\12744\\本题\\作答工作区\\runs\\cases\\10_recover_safety_foreign_files\\data\\keystore\\groups\\grp_safe\\READ_NOTES.txt",
+            "size": 25
+          }
+        },
+        {
+          "step": "plant_bin",
+          "ok": true,
+          "result": {
+            "path": "D:\\my-workspace\\ai-workspace\\zhongqiang\\CC_Codex 用户反馈标注(领域专项)项目\\准备配置\\并行作答_20261117\\批次\\20261120\\12744\\本题\\作答工作区\\runs\\cases\\10_recover_safety_foreign_files\\data\\keystore\\groups\\grp_safe\\random-blob.bin",
+            "size": 6
+          }
+        },
+        {
+          "step": "rec",
+          "ok": true,
+          "result": {
+            "group_id": "grp_safe",
+            "kept": [
+              {
+                "gen": 1,
+                "status": "active"
+              }
+            ],
+            "orphan_files_removed": [],
+            "tmp_files_removed": [],
+            "abandoned_prepares": [],
+            "staging_pending": []
+          }
+        },
+        {
+          "step": "keep1",
+          "ok": true,
+          "result": {
+            "name": "READ_NOTES.txt",
+            "exists": true
+          }
+        },
+        {
+          "step": "keep2",
+          "ok": true,
+          "result": {
+            "name": "random-blob.bin",
+            "exists": true
+          }
+        },
+        {
+          "step": "keep3",
+          "ok": true,
+          "result": {
+            "name": "gen1.a.bin",
+            "exists": true
+          }
+        },
+        {
+          "step": "keep4",
+          "ok": true,
+          "result": {
+            "name": "gen1.b.bin",
+            "exists": true
+          }
+        },
+        {
+          "step": "snap",
+          "ok": true,
+          "result": {
+            "group_id": "grp_safe",
+            "next_gen": 2,
+            "active_gen": 1,
+            "old_gen": null,
+            "old_deadline_ms": null,
+            "generations": [
+              {
+                "gen": 1,
+                "group_id": "grp_safe",
+                "status": "active",
+                "digest_a": "62f4d6150e8bbf4f254e44759f30c2ae1a509925c2d707b36847b086492c7c0a",
+                "digest_b": "62f4d6150e8bbf4f254e44759f30c2ae1a509925c2d707b36847b086492c7c0a",
+                "created_ms": 1700000000000,
+                "published_ms": 1700000000000,
+                "revoked_ms": null,
+                "deadline_ms": null,
+                "superseded_ms": null,
+                "seed_tag": "seed-safe"
+              }
+            ],
+            "prep_ledger": [],
+            "receipts": [],
+            "audit_log": [
+              {
+                "id": 1,
+                "event_ms": 1700000000000,
+                "gen": null,
+                "action": "group_created",
+                "detail": "{}"
+              },
+              {
+                "id": 2,
+                "event_ms": 1700000000000,
+                "gen": 1,
+                "action": "prepare_allocated",
+                "detail": "{\"digest\":\"62f4d6150e8bbf4f254e44759f30c2ae1a509925c2d707b36847b086492c7c0a\"}"
+              },
+              {
+                "id": 3,
+                "event_ms": 1700000000000,
+                "gen": 1,
+                "action": "prepare_committed",
+                "detail": "{\"copies\":[\"a\",\"b\"],\"digest\":\"62f4d6150e8bbf4f254e44759f30c2ae1a509925c2d707b36847b086492c7c0a\"}"
+              },
+              {
+                "id": 4,
+                "event_ms": 1700000000000,
+                "gen": 1,
+                "action": "gen_published",
+                "detail": "{\"old_deadline_ms\":null,\"old_gen\":null}"
+              }
+            ]
+          }
+        }
+      ],
+      "leak_scan": {
+        "leaks": [],
+        "passed": true
+      }
+    },
+    {
+      "case_id": "11_same_material_distinct_generation",
+      "group_id": "grp_same",
+      "steps": [
+        {
+          "step": "g",
+          "ok": true,
+          "result": {
+            "group_id": "grp_same",
+            "created_ms": 1700000000000
+          }
+        },
+        {
+          "step": "p1",
+          "ok": true,
+          "result": {
+            "token": "c7456ef905db6a87957ae365b80d8d43a11c93e7072e2c187ed30428d2144d50",
+            "gen": 1,
+            "digest": "7875a53a64fbdf35abc1fc79a9ee7ceae45b65ed49b66cd18426342042493824",
+            "paths": {
+              "a": "D:\\my-workspace\\ai-workspace\\zhongqiang\\CC_Codex 用户反馈标注(领域专项)项目\\准备配置\\并行作答_20261117\\批次\\20261120\\12744\\本题\\作答工作区\\runs\\cases\\11_same_material_distinct_generation\\data\\keystore\\groups\\grp_same\\gen1.a.bin",
+              "b": "D:\\my-workspace\\ai-workspace\\zhongqiang\\CC_Codex 用户反馈标注(领域专项)项目\\准备配置\\并行作答_20261117\\批次\\20261120\\12744\\本题\\作答工作区\\runs\\cases\\11_same_material_distinct_generation\\data\\keystore\\groups\\grp_same\\gen1.b.bin"
+            },
+            "committed": true
+          }
+        },
+        {
+          "step": "pub1",
+          "ok": true,
+          "result": {
+            "gen": 1,
+            "active_gen": 1,
+            "old_gen": null,
+            "old_deadline_ms": null,
+            "replayed": false
+          }
+        },
+        {
+          "step": "s1",
+          "ok": true,
+          "result": {
+            "request_id": "req-same-1",
+            "gen": 1,
+            "event_digest": "327919289d22c13b5f7d1ee3d37ad093872defed08e5d13f3eb262e83266f90e",
+            "mac": "9a403d51b3285d7e26d034233b81f75f547e10a0a28b4020ca1f5221e07af360",
+            "replayed": false
+          }
+        },
+        {
+          "step": "p2",
+          "ok": true,
+          "result": {
+            "token": "91a82998e7160a50535045de77e0a9154519decd71c8fd4ce8a6eccb2d0430a3",
+            "gen": 2,
+            "digest": "6632a1d6187c2613eba819c3b2a31b50a9ce8be1b16037d2ef4e037a0cac8999",
+            "paths": {
+              "a": "D:\\my-workspace\\ai-workspace\\zhongqiang\\CC_Codex 用户反馈标注(领域专项)项目\\准备配置\\并行作答_20261117\\批次\\20261120\\12744\\本题\\作答工作区\\runs\\cases\\11_same_material_distinct_generation\\data\\keystore\\groups\\grp_same\\gen2.a.bin",
+              "b": "D:\\my-workspace\\ai-workspace\\zhongqiang\\CC_Codex 用户反馈标注(领域专项)项目\\准备配置\\并行作答_20261117\\批次\\20261120\\12744\\本题\\作答工作区\\runs\\cases\\11_same_material_distinct_generation\\data\\keystore\\groups\\grp_same\\gen2.b.bin"
+            },
+            "committed": true
+          }
+        },
+        {
+          "step": "pub2",
+          "ok": true,
+          "result": {
+            "gen": 2,
+            "active_gen": 2,
+            "old_gen": 1,
+            "old_deadline_ms": 1700000010000,
+            "replayed": false
+          }
+        },
+        {
+          "step": "s2",
+          "ok": true,
+          "result": {
+            "request_id": "req-same-2",
+            "gen": 2,
+            "event_digest": "327919289d22c13b5f7d1ee3d37ad093872defed08e5d13f3eb262e83266f90e",
+            "mac": "335bc2cd3cb7734f95ae6837dc208599aebc8b32a256f077cb61340c5331bebb",
+            "replayed": false
+          }
+        },
+        {
+          "step": "snap",
+          "ok": true,
+          "result": {
+            "group_id": "grp_same",
+            "next_gen": 3,
+            "active_gen": 2,
+            "old_gen": 1,
+            "old_deadline_ms": 1700000010000,
+            "generations": [
+              {
+                "gen": 1,
+                "group_id": "grp_same",
+                "status": "retired",
+                "digest_a": "7875a53a64fbdf35abc1fc79a9ee7ceae45b65ed49b66cd18426342042493824",
+                "digest_b": "7875a53a64fbdf35abc1fc79a9ee7ceae45b65ed49b66cd18426342042493824",
+                "created_ms": 1700000000000,
+                "published_ms": 1700000000000,
+                "revoked_ms": null,
+                "deadline_ms": 1700000010000,
+                "superseded_ms": null,
+                "seed_tag": "seed-same"
+              },
+              {
+                "gen": 2,
+                "group_id": "grp_same",
+                "status": "active",
+                "digest_a": "6632a1d6187c2613eba819c3b2a31b50a9ce8be1b16037d2ef4e037a0cac8999",
+                "digest_b": "6632a1d6187c2613eba819c3b2a31b50a9ce8be1b16037d2ef4e037a0cac8999",
+                "created_ms": 1700000000000,
+                "published_ms": 1700000000000,
+                "revoked_ms": null,
+                "deadline_ms": null,
+                "superseded_ms": null,
+                "seed_tag": "seed-same"
+              }
+            ],
+            "prep_ledger": [],
+            "receipts": [
+              {
+                "request_id": "req-same-1",
+                "kind": "sign",
+                "gen": 1,
+                "event_digest": "327919289d22c13b5f7d1ee3d37ad093872defed08e5d13f3eb262e83266f90e",
+                "mac": "9a403d51b3285d7e26d034233b81f75f547e10a0a28b4020ca1f5221e07af360",
+                "created_ms": 1700000000000
+              },
+              {
+                "request_id": "req-same-2",
+                "kind": "sign",
+                "gen": 2,
+                "event_digest": "327919289d22c13b5f7d1ee3d37ad093872defed08e5d13f3eb262e83266f90e",
+                "mac": "335bc2cd3cb7734f95ae6837dc208599aebc8b32a256f077cb61340c5331bebb",
+                "created_ms": 1700000000000
+              }
+            ],
+            "audit_log": [
+              {
+                "id": 1,
+                "event_ms": 1700000000000,
+                "gen": null,
+                "action": "group_created",
+                "detail": "{}"
+              },
+              {
+                "id": 2,
+                "event_ms": 1700000000000,
+                "gen": 1,
+                "action": "prepare_allocated",
+                "detail": "{\"digest\":\"7875a53a64fbdf35abc1fc79a9ee7ceae45b65ed49b66cd18426342042493824\"}"
+              },
+              {
+                "id": 3,
+                "event_ms": 1700000000000,
+                "gen": 1,
+                "action": "prepare_committed",
+                "detail": "{\"copies\":[\"a\",\"b\"],\"digest\":\"7875a53a64fbdf35abc1fc79a9ee7ceae45b65ed49b66cd18426342042493824\"}"
+              },
+              {
+                "id": 4,
+                "event_ms": 1700000000000,
+                "gen": 1,
+                "action": "gen_published",
+                "detail": "{\"old_deadline_ms\":null,\"old_gen\":null}"
+              },
+              {
+                "id": 5,
+                "event_ms": 1700000000000,
+                "gen": 1,
+                "action": "signed",
+                "detail": "{\"copy_slot\":\"a\",\"event_digest\":\"327919289d22c13b5f7d1ee3d37ad093872defed08e5d13f3eb262e83266f90e\",\"request_id\":\"req-same-1\"}"
+              },
+              {
+                "id": 6,
+                "event_ms": 1700000000000,
+                "gen": 2,
+                "action": "prepare_allocated",
+                "detail": "{\"digest\":\"6632a1d6187c2613eba819c3b2a31b50a9ce8be1b16037d2ef4e037a0cac8999\"}"
+              },
+              {
+                "id": 7,
+                "event_ms": 1700000000000,
+                "gen": 2,
+                "action": "prepare_committed",
+                "detail": "{\"copies\":[\"a\",\"b\"],\"digest\":\"6632a1d6187c2613eba819c3b2a31b50a9ce8be1b16037d2ef4e037a0cac8999\"}"
+              },
+              {
+                "id": 8,
+                "event_ms": 1700000000000,
+                "gen": 1,
+                "action": "gen_retired",
+                "detail": "{\"deadline_ms\":1700000010000}"
+              },
+              {
+                "id": 9,
+                "event_ms": 1700000000000,
+                "gen": 2,
+                "action": "gen_published",
+                "detail": "{\"old_deadline_ms\":1700000010000,\"old_gen\":1}"
+              },
+              {
+                "id": 10,
+                "event_ms": 1700000000000,
+                "gen": 2,
+                "action": "signed",
+                "detail": "{\"copy_slot\":\"a\",\"event_digest\":\"327919289d22c13b5f7d1ee3d37ad093872defed08e5d13f3eb262e83266f90e\",\"request_id\":\"req-same-2\"}"
+              }
+            ]
+          }
+        }
+      ],
+      "leak_scan": {
+        "leaks": [],
+        "passed": true
+      }
+    },
+    {
+      "case_id": "12_sign_idempotency",
+      "group_id": "grp_idem",
+      "steps": [
+        {
+          "step": "g",
+          "ok": true,
+          "result": {
+            "group_id": "grp_idem",
+            "created_ms": 1700000000000
+          }
+        },
+        {
+          "step": "p1",
+          "ok": true,
+          "result": {
+            "token": "bff3da7900ebaa459bde7dbe9904ed53eb24c7753b4d9b2342da48307d13c800",
+            "gen": 1,
+            "digest": "c7dfb401455aabea670accac5c9b2c9a9e9806ef57bb793aba2580c8ae9432be",
+            "paths": {
+              "a": "D:\\my-workspace\\ai-workspace\\zhongqiang\\CC_Codex 用户反馈标注(领域专项)项目\\准备配置\\并行作答_20261117\\批次\\20261120\\12744\\本题\\作答工作区\\runs\\cases\\12_sign_idempotency\\data\\keystore\\groups\\grp_idem\\gen1.a.bin",
+              "b": "D:\\my-workspace\\ai-workspace\\zhongqiang\\CC_Codex 用户反馈标注(领域专项)项目\\准备配置\\并行作答_20261117\\批次\\20261120\\12744\\本题\\作答工作区\\runs\\cases\\12_sign_idempotency\\data\\keystore\\groups\\grp_idem\\gen1.b.bin"
+            },
+            "committed": true
+          }
+        },
+        {
+          "step": "pub1",
+          "ok": true,
+          "result": {
+            "gen": 1,
+            "active_gen": 1,
+            "old_gen": null,
+            "old_deadline_ms": null,
+            "replayed": false
+          }
+        },
+        {
+          "step": "s1",
+          "ok": true,
+          "result": {
+            "request_id": "req-idem",
+            "gen": 1,
+            "event_digest": "296859da47b67c5446b8138ea8c48506883207adac78490beed482a5f4c4025c",
+            "mac": "911dcea726ef0fa6d720d087c644c8b497a7078d96e3d315d989d3bdbf26bc9c",
+            "replayed": false
+          }
+        },
+        {
+          "step": "s1b",
+          "ok": true,
+          "result": {
+            "request_id": "req-idem",
+            "gen": 1,
+            "event_digest": "296859da47b67c5446b8138ea8c48506883207adac78490beed482a5f4c4025c",
+            "mac": "911dcea726ef0fa6d720d087c644c8b497a7078d96e3d315d989d3bdbf26bc9c",
+            "replayed": true
+          }
+        },
+        {
+          "step": "s1c",
+          "ok": false,
+          "code": "E_REQUEST_CONFLICT",
+          "message": "request_id req-idem reused with different payload",
+          "details": {}
+        },
+        {
+          "step": "snap",
+          "ok": true,
+          "result": {
+            "group_id": "grp_idem",
+            "next_gen": 2,
+            "active_gen": 1,
+            "old_gen": null,
+            "old_deadline_ms": null,
+            "generations": [
+              {
+                "gen": 1,
+                "group_id": "grp_idem",
+                "status": "active",
+                "digest_a": "c7dfb401455aabea670accac5c9b2c9a9e9806ef57bb793aba2580c8ae9432be",
+                "digest_b": "c7dfb401455aabea670accac5c9b2c9a9e9806ef57bb793aba2580c8ae9432be",
+                "created_ms": 1700000000000,
+                "published_ms": 1700000000000,
+                "revoked_ms": null,
+                "deadline_ms": null,
+                "superseded_ms": null,
+                "seed_tag": "seed-idem"
+              }
+            ],
+            "prep_ledger": [],
+            "receipts": [
+              {
+                "request_id": "req-idem",
+                "kind": "sign",
+                "gen": 1,
+                "event_digest": "296859da47b67c5446b8138ea8c48506883207adac78490beed482a5f4c4025c",
+                "mac": "911dcea726ef0fa6d720d087c644c8b497a7078d96e3d315d989d3bdbf26bc9c",
+                "created_ms": 1700000000000
+              }
+            ],
+            "audit_log": [
+              {
+                "id": 1,
+                "event_ms": 1700000000000,
+                "gen": null,
+                "action": "group_created",
+                "detail": "{}"
+              },
+              {
+                "id": 2,
+                "event_ms": 1700000000000,
+                "gen": 1,
+                "action": "prepare_allocated",
+                "detail": "{\"digest\":\"c7dfb401455aabea670accac5c9b2c9a9e9806ef57bb793aba2580c8ae9432be\"}"
+              },
+              {
+                "id": 3,
+                "event_ms": 1700000000000,
+                "gen": 1,
+                "action": "prepare_committed",
+                "detail": "{\"copies\":[\"a\",\"b\"],\"digest\":\"c7dfb401455aabea670accac5c9b2c9a9e9806ef57bb793aba2580c8ae9432be\"}"
+              },
+              {
+                "id": 4,
+                "event_ms": 1700000000000,
+                "gen": 1,
+                "action": "gen_published",
+                "detail": "{\"old_deadline_ms\":null,\"old_gen\":null}"
+              },
+              {
+                "id": 5,
+                "event_ms": 1700000000000,
+                "gen": 1,
+                "action": "signed",
+                "detail": "{\"copy_slot\":\"a\",\"event_digest\":\"296859da47b67c5446b8138ea8c48506883207adac78490beed482a5f4c4025c\",\"request_id\":\"req-idem\"}"
+              },
+              {
+                "id": 6,
+                "event_ms": 1700000000000,
+                "gen": 1,
+                "action": "sign_replayed",
+                "detail": "{\"event_digest\":\"296859da47b67c5446b8138ea8c48506883207adac78490beed482a5f4c4025c\",\"request_id\":\"req-idem\"}"
+              }
+            ]
+          }
+        }
+      ],
+      "leak_scan": {
+        "leaks": [],
+        "passed": true
+      }
+    }
+  ]
+}

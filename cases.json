@@ -1,0 +1,919 @@
+{
+  "schema": "key-rotation-cases/v1",
+  "description": "本地服务签名密钥轮换验证器可重放用例（全部输入为合成测试数据）",
+  "clock_start_ms": 1700000000000,
+  "cases": [
+    {
+      "case_id": "01_happy_rotation",
+      "group_id": "grp_happy",
+      "steps": [
+        {
+          "id": "g",
+          "type": "create_group"
+        },
+        {
+          "id": "p1",
+          "type": "prepare",
+          "seed": "seed-happy",
+          "expect_fields": {
+            "gen": 1,
+            "committed": true
+          }
+        },
+        {
+          "id": "pub1",
+          "type": "publish",
+          "token": "$refs.p1",
+          "expected_active_gen": null,
+          "old_valid_ms": 10000,
+          "expect_fields": {
+            "gen": 1,
+            "replayed": false
+          }
+        },
+        {
+          "id": "s1",
+          "type": "sign",
+          "request_id": "req-1",
+          "event": "ops:event-a",
+          "expect_fields": {
+            "gen": 1,
+            "replayed": false
+          }
+        },
+        {
+          "id": "v1",
+          "type": "verify",
+          "gen": 1,
+          "mac": "$refs.s1",
+          "event": "ops:event-a",
+          "expect_valid": true
+        },
+        {
+          "id": "p2",
+          "type": "prepare",
+          "seed": "seed-happy-2",
+          "expect_fields": {
+            "gen": 2
+          }
+        },
+        {
+          "id": "pub2",
+          "type": "publish",
+          "token": "$refs.p2",
+          "expected_active_gen": 1,
+          "old_valid_ms": 10000,
+          "expect_fields": {
+            "gen": 2,
+            "old_gen": 1
+          }
+        },
+        {
+          "id": "s2",
+          "type": "sign",
+          "request_id": "req-2",
+          "event": "ops:event-b",
+          "expect_fields": {
+            "gen": 2
+          }
+        },
+        {
+          "id": "v_old_ok",
+          "type": "verify",
+          "gen": 1,
+          "mac": "$refs.s1",
+          "event": "ops:event-a",
+          "expect_valid": true
+        },
+        {
+          "id": "v_other_ev",
+          "type": "verify",
+          "gen": 1,
+          "mac": "$refs.s2",
+          "event": "ops:event-b",
+          "expect_valid": false
+        },
+        {
+          "id": "snap",
+          "type": "snapshot",
+          "expect_fields": {
+            "active_gen": 2,
+            "old_gen": 1
+          }
+        },
+        {
+          "id": "files",
+          "type": "list_files",
+          "expect_true": {
+            "files": true
+          }
+        }
+      ]
+    },
+    {
+      "case_id": "02_kill_half_written_file",
+      "group_id": "grp_half",
+      "steps": [
+        {
+          "id": "g",
+          "type": "create_group"
+        },
+        {
+          "id": "w",
+          "type": "worker_spawn",
+          "proc": "worker1",
+          "op": "prepare",
+          "seed": "seed-half",
+          "hook": "prepare.mid_first_write"
+        },
+        {
+          "id": "kill",
+          "type": "worker_gate",
+          "proc": "worker1",
+          "spawn_step": "w",
+          "hook": "prepare.mid_first_write",
+          "action": "kill"
+        },
+        {
+          "id": "wr",
+          "type": "worker_result",
+          "proc": "worker1",
+          "expect_error": "E_WORKER_KILLED"
+        },
+        {
+          "id": "files1",
+          "type": "list_files"
+        },
+        {
+          "id": "rec",
+          "type": "recover",
+          "expect_true": {
+            "tmp_files_removed": true
+          }
+        },
+        {
+          "id": "snap",
+          "type": "snapshot"
+        },
+        {
+          "id": "p2",
+          "type": "prepare",
+          "seed": "seed-half-retry",
+          "expect_fields": {
+            "gen": 2
+          }
+        },
+        {
+          "id": "files2",
+          "type": "list_files",
+          "expect_true": {
+            "files": true
+          }
+        }
+      ]
+    },
+    {
+      "case_id": "03_kill_after_both_written",
+      "group_id": "grp_both",
+      "steps": [
+        {
+          "id": "g",
+          "type": "create_group"
+        },
+        {
+          "id": "w",
+          "type": "worker_spawn",
+          "proc": "worker1",
+          "op": "prepare",
+          "seed": "seed-both",
+          "hook": "prepare.after_both_written"
+        },
+        {
+          "id": "kill",
+          "type": "worker_gate",
+          "proc": "worker1",
+          "spawn_step": "w",
+          "hook": "prepare.after_both_written",
+          "action": "kill"
+        },
+        {
+          "id": "wr",
+          "type": "worker_result",
+          "proc": "worker1",
+          "expect_error": "E_WORKER_KILLED"
+        },
+        {
+          "id": "rec",
+          "type": "recover",
+          "expect_true": {
+            "staging_pending": true
+          },
+          "expect_fields": {
+            "orphan_files_removed.__len__": 0
+          }
+        },
+        {
+          "id": "snap",
+          "type": "snapshot"
+        },
+        {
+          "id": "files",
+          "type": "list_files",
+          "expect_true": {
+            "files": true
+          }
+        },
+        {
+          "id": "pub",
+          "type": "publish",
+          "token_path": "rec.result.staging_pending.0.token",
+          "expected_active_gen": null,
+          "old_valid_ms": 0,
+          "expect_fields": {
+            "gen": 1,
+            "replayed": false
+          }
+        },
+        {
+          "id": "s",
+          "type": "sign",
+          "request_id": "req-both",
+          "event": "ops:both",
+          "expect_fields": {
+            "gen": 1
+          }
+        }
+      ]
+    },
+    {
+      "case_id": "04_kill_after_commit",
+      "group_id": "grp_commit",
+      "steps": [
+        {
+          "id": "g",
+          "type": "create_group"
+        },
+        {
+          "id": "p",
+          "type": "prepare",
+          "seed": "seed-commit",
+          "expect_fields": {
+            "gen": 1
+          }
+        },
+        {
+          "id": "w",
+          "type": "worker_spawn",
+          "proc": "worker1",
+          "op": "publish",
+          "token": "$refs.p",
+          "expected_active_gen": null,
+          "old_valid_ms": 0,
+          "hook": "publish.after_commit"
+        },
+        {
+          "id": "kill",
+          "type": "worker_gate",
+          "proc": "worker1",
+          "spawn_step": "w",
+          "hook": "publish.after_commit",
+          "action": "kill"
+        },
+        {
+          "id": "wr",
+          "type": "worker_result",
+          "proc": "worker1",
+          "expect_error": "E_WORKER_KILLED"
+        },
+        {
+          "id": "snap1",
+          "type": "snapshot",
+          "expect_fields": {
+            "active_gen": 1
+          }
+        },
+        {
+          "id": "retry",
+          "type": "publish",
+          "token": "$refs.p",
+          "expected_active_gen": null,
+          "old_valid_ms": 0,
+          "expect_fields": {
+            "gen": 1,
+            "replayed": true
+          }
+        },
+        {
+          "id": "s",
+          "type": "sign",
+          "request_id": "req-c1",
+          "event": "ops:commit",
+          "expect_fields": {
+            "gen": 1
+          }
+        }
+      ]
+    },
+    {
+      "case_id": "05_same_gen_two_writers",
+      "group_id": "grp_race",
+      "steps": [
+        {
+          "id": "g",
+          "type": "create_group"
+        },
+        {
+          "id": "p1",
+          "type": "prepare",
+          "seed": "seed-race-1",
+          "expect_fields": {
+            "gen": 1
+          }
+        },
+        {
+          "id": "p2",
+          "type": "prepare",
+          "seed": "seed-race-2",
+          "expect_error": "E_STAGING_EXISTS"
+        },
+        {
+          "id": "p3",
+          "type": "prepare",
+          "seed": "seed-race-3",
+          "replace": true,
+          "expect_fields": {
+            "gen": 2
+          }
+        },
+        {
+          "id": "snap",
+          "type": "snapshot"
+        },
+        {
+          "id": "pub_orphan",
+          "type": "publish",
+          "token": "$refs.p1",
+          "expected_active_gen": null,
+          "old_valid_ms": 0,
+          "expect_error": "E_TOKEN_SUPERSEDED"
+        },
+        {
+          "id": "pub2",
+          "type": "publish",
+          "token": "$refs.p3",
+          "expected_active_gen": null,
+          "old_valid_ms": 0,
+          "expect_fields": {
+            "gen": 2
+          }
+        }
+      ]
+    },
+    {
+      "case_id": "06_staging_baseline_replaced",
+      "group_id": "grp_base",
+      "steps": [
+        {
+          "id": "g",
+          "type": "create_group"
+        },
+        {
+          "id": "p1",
+          "type": "prepare",
+          "seed": "seed-base-1",
+          "expect_fields": {
+            "gen": 1
+          }
+        },
+        {
+          "id": "pub1",
+          "type": "publish",
+          "token": "$refs.p1",
+          "expected_active_gen": null,
+          "old_valid_ms": 0,
+          "expect_fields": {
+            "gen": 1
+          }
+        },
+        {
+          "id": "p2",
+          "type": "prepare",
+          "seed": "seed-base-2",
+          "expect_fields": {
+            "gen": 2
+          }
+        },
+        {
+          "id": "p3",
+          "type": "prepare",
+          "seed": "seed-base-3",
+          "replace": true,
+          "expect_fields": {
+            "gen": 3
+          }
+        },
+        {
+          "id": "pub_stale",
+          "type": "publish",
+          "token": "$refs.p2",
+          "expected_active_gen": 1,
+          "old_valid_ms": 0,
+          "expect_error": "E_TOKEN_SUPERSEDED"
+        },
+        {
+          "id": "pub3",
+          "type": "publish",
+          "token": "$refs.p3",
+          "expected_active_gen": 1,
+          "old_valid_ms": 5000,
+          "expect_fields": {
+            "gen": 3,
+            "old_gen": 1
+          }
+        },
+        {
+          "id": "s",
+          "type": "sign",
+          "request_id": "req-base",
+          "event": "ops:base",
+          "expect_fields": {
+            "gen": 3
+          }
+        }
+      ]
+    },
+    {
+      "case_id": "07_single_copy_corruption",
+      "group_id": "grp_corrupt",
+      "steps": [
+        {
+          "id": "g",
+          "type": "create_group"
+        },
+        {
+          "id": "p1",
+          "type": "prepare",
+          "seed": "seed-corr-1",
+          "expect_fields": {
+            "gen": 1
+          }
+        },
+        {
+          "id": "pub1",
+          "type": "publish",
+          "token": "$refs.p1",
+          "expected_active_gen": null,
+          "old_valid_ms": 0,
+          "expect_fields": {
+            "gen": 1
+          }
+        },
+        {
+          "id": "s1",
+          "type": "sign",
+          "request_id": "req-corr-1",
+          "event": "ops:corr",
+          "expect_fields": {
+            "gen": 1
+          }
+        },
+        {
+          "id": "p2",
+          "type": "prepare",
+          "seed": "seed-corr-2",
+          "expect_fields": {
+            "gen": 2
+          }
+        },
+        {
+          "id": "pub2",
+          "type": "publish",
+          "token": "$refs.p2",
+          "expected_active_gen": 1,
+          "old_valid_ms": 100000,
+          "expect_fields": {
+            "gen": 2,
+            "old_gen": 1
+          }
+        },
+        {
+          "id": "bad_a",
+          "type": "corrupt_copy",
+          "gen": 2,
+          "slot": "a",
+          "mode": "garbage"
+        },
+        {
+          "id": "s2",
+          "type": "sign",
+          "request_id": "req-corr-2",
+          "event": "ops:corr2",
+          "expect_fields": {
+            "gen": 2
+          }
+        },
+        {
+          "id": "bad_b",
+          "type": "corrupt_copy",
+          "gen": 2,
+          "slot": "b",
+          "mode": "delete"
+        },
+        {
+          "id": "s3_fail",
+          "type": "sign",
+          "request_id": "req-corr-3",
+          "event": "ops:corr3",
+          "expect_error": "E_MATERIAL_UNAVAILABLE"
+        },
+        {
+          "id": "v_old",
+          "type": "verify",
+          "gen": 1,
+          "mac": "$refs.s1",
+          "event": "ops:corr",
+          "expect_valid": true
+        },
+        {
+          "id": "snap",
+          "type": "snapshot",
+          "expect_fields": {
+            "active_gen": 2
+          }
+        }
+      ]
+    },
+    {
+      "case_id": "08_old_gen_deadline_boundary",
+      "group_id": "grp_deadline",
+      "steps": [
+        {
+          "id": "g",
+          "type": "create_group"
+        },
+        {
+          "id": "p1",
+          "type": "prepare",
+          "seed": "seed-dl-1",
+          "expect_fields": {
+            "gen": 1
+          }
+        },
+        {
+          "id": "pub1",
+          "type": "publish",
+          "token": "$refs.p1",
+          "expected_active_gen": null,
+          "old_valid_ms": 0,
+          "expect_fields": {
+            "gen": 1
+          }
+        },
+        {
+          "id": "s1",
+          "type": "sign",
+          "request_id": "req-dl-1",
+          "event": "ops:dl",
+          "expect_fields": {
+            "gen": 1
+          }
+        },
+        {
+          "id": "p2",
+          "type": "prepare",
+          "seed": "seed-dl-2",
+          "expect_fields": {
+            "gen": 2
+          }
+        },
+        {
+          "id": "pub2",
+          "type": "publish",
+          "token": "$refs.p2",
+          "expected_active_gen": 1,
+          "old_valid_ms": 1000,
+          "expect_fields": {
+            "gen": 2,
+            "old_deadline_ms": 1700000001000
+          }
+        },
+        {
+          "id": "adv_eq",
+          "type": "clock_advance",
+          "delta_ms": 1000
+        },
+        {
+          "id": "v_eq",
+          "type": "verify",
+          "gen": 1,
+          "mac": "$refs.s1",
+          "event": "ops:dl",
+          "expect_valid": true
+        },
+        {
+          "id": "adv_over",
+          "type": "clock_advance",
+          "delta_ms": 1
+        },
+        {
+          "id": "v_over",
+          "type": "verify",
+          "gen": 1,
+          "mac": "$refs.s1",
+          "event": "ops:dl",
+          "expect_error": "E_OLD_GEN_EXPIRED"
+        }
+      ]
+    },
+    {
+      "case_id": "09_revoked_never_reissued",
+      "group_id": "grp_revoke",
+      "steps": [
+        {
+          "id": "g",
+          "type": "create_group"
+        },
+        {
+          "id": "p1",
+          "type": "prepare",
+          "seed": "seed-rv-1",
+          "expect_fields": {
+            "gen": 1
+          }
+        },
+        {
+          "id": "pub1",
+          "type": "publish",
+          "token": "$refs.p1",
+          "expected_active_gen": null,
+          "old_valid_ms": 0,
+          "expect_fields": {
+            "gen": 1
+          }
+        },
+        {
+          "id": "s1",
+          "type": "sign",
+          "request_id": "req-rv",
+          "event": "ops:rv",
+          "expect_fields": {
+            "gen": 1
+          }
+        },
+        {
+          "id": "p2",
+          "type": "prepare",
+          "seed": "seed-rv-2",
+          "expect_fields": {
+            "gen": 2
+          }
+        },
+        {
+          "id": "pub2",
+          "type": "publish",
+          "token": "$refs.p2",
+          "expected_active_gen": 1,
+          "old_valid_ms": 10000,
+          "expect_fields": {
+            "gen": 2
+          }
+        },
+        {
+          "id": "rev",
+          "type": "revoke",
+          "gen": 1,
+          "expect_fields": {
+            "status": "revoked"
+          }
+        },
+        {
+          "id": "v_rev",
+          "type": "verify",
+          "gen": 1,
+          "mac": "$refs.s1",
+          "event": "ops:rv",
+          "expect_error": "E_REVOKED_GEN"
+        },
+        {
+          "id": "p3",
+          "type": "prepare",
+          "seed": "seed-rv-3",
+          "expect_fields": {
+            "gen": 3
+          }
+        },
+        {
+          "id": "snap",
+          "type": "snapshot"
+        }
+      ]
+    },
+    {
+      "case_id": "10_recover_safety_foreign_files",
+      "group_id": "grp_safe",
+      "steps": [
+        {
+          "id": "g",
+          "type": "create_group"
+        },
+        {
+          "id": "p1",
+          "type": "prepare",
+          "seed": "seed-safe",
+          "expect_fields": {
+            "gen": 1
+          }
+        },
+        {
+          "id": "pub1",
+          "type": "publish",
+          "token": "$refs.p1",
+          "expected_active_gen": null,
+          "old_valid_ms": 0,
+          "expect_fields": {
+            "gen": 1
+          }
+        },
+        {
+          "id": "plant",
+          "type": "plant_foreign",
+          "name": "READ_NOTES.txt",
+          "content": "not owned by key rotation"
+        },
+        {
+          "id": "plant_bin",
+          "type": "plant_foreign",
+          "name": "random-blob.bin",
+          "content": "random"
+        },
+        {
+          "id": "rec",
+          "type": "recover",
+          "expect_fields": {
+            "orphan_files_removed.__len__": 0,
+            "tmp_files_removed.__len__": 0
+          }
+        },
+        {
+          "id": "keep1",
+          "type": "assert_file",
+          "name": "READ_NOTES.txt",
+          "exists": true
+        },
+        {
+          "id": "keep2",
+          "type": "assert_file",
+          "name": "random-blob.bin",
+          "exists": true
+        },
+        {
+          "id": "keep3",
+          "type": "assert_file",
+          "name": "gen1.a.bin",
+          "exists": true
+        },
+        {
+          "id": "keep4",
+          "type": "assert_file",
+          "name": "gen1.b.bin",
+          "exists": true
+        },
+        {
+          "id": "snap",
+          "type": "snapshot",
+          "expect_fields": {
+            "active_gen": 1
+          }
+        }
+      ]
+    },
+    {
+      "case_id": "11_same_material_distinct_generation",
+      "group_id": "grp_same",
+      "steps": [
+        {
+          "id": "g",
+          "type": "create_group"
+        },
+        {
+          "id": "p1",
+          "type": "prepare",
+          "seed": "seed-same",
+          "expect_fields": {
+            "gen": 1
+          }
+        },
+        {
+          "id": "pub1",
+          "type": "publish",
+          "token": "$refs.p1",
+          "expected_active_gen": null,
+          "old_valid_ms": 0,
+          "expect_fields": {
+            "gen": 1
+          }
+        },
+        {
+          "id": "s1",
+          "type": "sign",
+          "request_id": "req-same-1",
+          "event": "ops:same",
+          "expect_fields": {
+            "gen": 1
+          }
+        },
+        {
+          "id": "p2",
+          "type": "prepare",
+          "seed": "seed-same",
+          "expect_fields": {
+            "gen": 2
+          }
+        },
+        {
+          "id": "pub2",
+          "type": "publish",
+          "token": "$refs.p2",
+          "expected_active_gen": 1,
+          "old_valid_ms": 10000,
+          "expect_fields": {
+            "gen": 2
+          }
+        },
+        {
+          "id": "s2",
+          "type": "sign",
+          "request_id": "req-same-2",
+          "event": "ops:same",
+          "expect_fields": {
+            "gen": 2
+          }
+        },
+        {
+          "id": "snap",
+          "type": "snapshot"
+        }
+      ]
+    },
+    {
+      "case_id": "12_sign_idempotency",
+      "group_id": "grp_idem",
+      "steps": [
+        {
+          "id": "g",
+          "type": "create_group"
+        },
+        {
+          "id": "p1",
+          "type": "prepare",
+          "seed": "seed-idem",
+          "expect_fields": {
+            "gen": 1
+          }
+        },
+        {
+          "id": "pub1",
+          "type": "publish",
+          "token": "$refs.p1",
+          "expected_active_gen": null,
+          "old_valid_ms": 0,
+          "expect_fields": {
+            "gen": 1
+          }
+        },
+        {
+          "id": "s1",
+          "type": "sign",
+          "request_id": "req-idem",
+          "event": "ops:idem",
+          "expect_fields": {
+            "replayed": false
+          }
+        },
+        {
+          "id": "s1b",
+          "type": "sign",
+          "request_id": "req-idem",
+          "event": "ops:idem",
+          "expect_fields": {
+            "replayed": true
+          },
+          "expect_refs": {
+            "mac": "$refs.s1"
+          }
+        },
+        {
+          "id": "s1c",
+          "type": "sign",
+          "request_id": "req-idem",
+          "event": "ops:different",
+          "expect_error": "E_REQUEST_CONFLICT"
+        },
+        {
+          "id": "snap",
+          "type": "snapshot"
+        }
+      ]
+    }
+  ]
+}
